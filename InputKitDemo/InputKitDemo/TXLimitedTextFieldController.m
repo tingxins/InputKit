@@ -11,7 +11,6 @@
 
 @interface TXLimitedTextFieldController ()<UITextFieldDelegate>
 @property (weak, nonatomic) IBOutlet UISegmentedControl *segmentComponent;
-
 @property (weak, nonatomic) IBOutlet TXLimitedTextField *limitedTextField;
 
 @property (weak, nonatomic) IBOutlet TXLimitedTextField *limitedNumberField;
@@ -26,6 +25,12 @@
 
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *limitedNumberTopConstraint;
 
+@property (weak, nonatomic) IBOutlet UILabel *textSeletingLabel;
+@property (weak, nonatomic) IBOutlet UISwitch *textSelectingSwitch;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *textSelectingConstraint;
+
+@property (weak, nonatomic) IBOutlet UILabel *tipLabel;
+
 @end
 
 @implementation TXLimitedTextFieldController
@@ -37,7 +42,7 @@
     
     [self setupNotification];
     
-    [self updateInputLimitedValue:nil];
+    [self segmentValueTypeDidChange:self.segmentComponent];
 }
 
 - (void)setupDelegate {
@@ -49,7 +54,11 @@
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(updateInputLimitedValue:) name:UITextFieldTextDidChangeNotification object:nil];
 }
 
+#pragma mark - Target Methods
+
 - (IBAction)segmentValueTypeDidChange:(UISegmentedControl *)sender {
+    self.limitedTextField.text = @"";
+    self.tipLabel.text = @"";
     [self updateInputLimitedValue:nil];
     switch (sender.selectedSegmentIndex) {
         case TXLimitedTextFieldTypePrice:
@@ -69,7 +78,6 @@
     }
 }
 
-
 - (void)hiddenPriceComponent:(BOOL)hidden {
     self.interLabel.hidden = hidden;
     self.deciLabel.hidden = hidden;
@@ -80,11 +88,20 @@
 - (void)hiddenCustomRegExComponent:(BOOL)hidden {
     self.customRegExField.hidden = hidden;
     self.customRegExLabel.hidden = hidden;
+    self.textSeletingLabel.hidden = hidden;
+    self.textSelectingSwitch.hidden = hidden;
+    self.limitedTextField.isTextSelecting = !hidden;
     if (hidden) {
+        self.textSelectingConstraint.constant = 90;
         self.limitedNumberTopConstraint.constant = 20;
     }else {
+        self.textSelectingConstraint.constant = 10;
         self.limitedNumberTopConstraint.constant = 60;
     }
+}
+
+- (IBAction)textSelectSwitchValueChange:(UISwitch *)sender {
+    self.limitedTextField.isTextSelecting = sender.isOn;
 }
 
 #pragma mark - UITextField Notification
@@ -102,10 +119,26 @@
     self.limitedTextField.limitedRegExs = @[regEx];
 }
 
+#pragma mark - InputKit 输入被限制时回调该方法
+
 - (void)inputKitDidLimitedIllegalInputText:(id)obj {
-    NSLog(@"%s", __func__);
+    self.tipLabel.text = @"已限制输入文本";
+    self.tipLabel.textColor = [UIColor redColor];
 }
 
+#pragma mark - UITextFieldDelegate
+
+- (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string {
+    self.tipLabel.text = @"正常输入文本";
+    self.tipLabel.textColor = [UIColor greenColor];
+    return YES;
+}
+
+#pragma mark - Touch Event
+
+- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
+    [self.view endEditing:YES];
+}
 
 /*
 #pragma mark - Navigation
