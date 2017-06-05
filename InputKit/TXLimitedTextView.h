@@ -43,6 +43,6 @@ typedef NS_ENUM (NSInteger, TXLimitedTextViewType) {
 /**
  针对部分输入法含高亮选择文本，如：中文输入法
  */
-@property (assign, nonatomic) BOOL isTextSelecting;
+@property (assign, nonatomic) IBInspectable BOOL isTextSelecting;
 
 @end
