@@ -14,8 +14,6 @@
 
 @property (copy, nonatomic) NSString *historyText;
 
-@property (assign, nonatomic) BOOL canSendMsg;
-
 @end
 
 @implementation TXLimitedTextView
@@ -59,7 +57,6 @@
 
 - (void)addConfigs {
     self.delegate = nil;
-    self.canSendMsg = YES;
 }
 
 - (void)clearCache {
@@ -139,11 +136,6 @@
 }
 
 - (void)sendIllegalMsgToObject {
-    if (!self.canSendMsg) {
-        self.canSendMsg = YES;
-        return;
-    }
-    
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Wundeclared-selector"// get rid of undeclared selector warning!
     SEL sel = @selector(inputKitDidLimitedIllegalInputText:);
@@ -176,15 +168,12 @@
         NSString * matchStr = [NSString stringWithFormat:@"%@%@",textView.text, text];
         
         BOOL isDeleteOperation = (range.length > 0 && text.length == 0) ? YES : NO;
-        BOOL isGreaterThanLimitedNumber = YES;
         switch (limitedTextView.limitedType) {
             case TXLimitedTextViewTypeDefault:
-                isGreaterThanLimitedNumber = matchStr.length > limitedTextView.limitedNumber;
                 break;
                 
             case TXLimitedTextViewTypePrice: {
                 matchResult = [TXMatchManager matchLimitedTextTypePriceWithComponent:limitedTextView value:matchStr];
-                isGreaterThanLimitedNumber = matchStr.length > limitedTextView.limitedNumber;
             }
                 break;
                 
@@ -194,7 +183,6 @@
                 }else {
                     matchResult = [TXMatchManager matchLimitedTextTypeCustomWithRegExs:limitedTextView.limitedRegExs component:limitedTextView value:matchStr];
                 }
-                isGreaterThanLimitedNumber = NO;
             }
                 break;
                 
@@ -204,15 +192,13 @@
         }
         
         BOOL result = flag && (matchResult || isDeleteOperation);
-        if ((!result || isGreaterThanLimitedNumber) && limitedTextView.canSendMsg) {
+        // Send limited msg.
+        if (!result) {
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Wundeclared-selector"// get rid of undeclared selector warning!
             SEL sel = @selector(inputKitDidLimitedIllegalInputText:);
 #pragma clang diagnostic pop
-            limitedTextView.canSendMsg = NO;
             [self sendMsgToObject:self.realDelegate with:textView SEL:sel];
-        }else {
-            limitedTextView.canSendMsg = YES;
         }
         return result;
     }

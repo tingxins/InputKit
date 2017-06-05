@@ -15,8 +15,6 @@
 
 @property (copy, nonatomic) NSString *historyText;
 
-@property (assign, nonatomic) BOOL canSendMsg;
-
 @end
 
 @implementation TXLimitedTextField
@@ -60,7 +58,6 @@
 
 - (void)addConfigs {
     self.delegate = nil;
-    self.canSendMsg = YES;
 }
 
 - (void)clearCache {
@@ -112,7 +109,6 @@
     UITextRange *selectedRange = [textField markedTextRange];
     UITextPosition *position = [textField positionFromPosition:selectedRange.start offset:0];
 
-    
     BOOL isMatch = [TXMatchManager matchLimitedTextTypeCustomWithRegExs:self.limitedRegExs component:textField value:currentText];
     
     if (isMatch) {
@@ -143,11 +139,6 @@
 }
 
 - (void)sendIllegalMsgToObject {
-    if (!self.canSendMsg) {
-        self.canSendMsg = YES;
-        return;
-    }
-    
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Wundeclared-selector"// get rid of undeclared selector warning!
     SEL sel = @selector(inputKitDidLimitedIllegalInputText:);
@@ -218,17 +209,13 @@
         TXLimitedTextField *limitedTextField = (TXLimitedTextField *)textField;
         NSString *matchStr = [NSString stringWithFormat:@"%@%@",textField.text,string];
         
-        BOOL isDeleteOperation = (range.length > 0 && string.length == 0) ? YES : NO;
-        BOOL isGreaterThanLimitedNumber = YES;
-        
+        BOOL isDeleteOperation = (range.length > 0 && string.length == 0) ? YES : NO;        
         switch (limitedTextField.limitedType) {
             case TXLimitedTextFieldTypeDefault:
-                isGreaterThanLimitedNumber = matchStr.length > limitedTextField.limitedNumber;
                 break;
                 
             case TXLimitedTextFieldTypePrice: {
                 matchResult = [TXMatchManager matchLimitedTextTypePriceWithComponent:limitedTextField value:matchStr];
-                isGreaterThanLimitedNumber = matchStr.length > limitedTextField.limitedNumber;
             }
                 break;
                 
@@ -238,7 +225,6 @@
                 }else {
                     matchResult = [TXMatchManager matchLimitedTextTypeCustomWithRegExs:limitedTextField.limitedRegExs component:limitedTextField value:matchStr];
                 }
-                isGreaterThanLimitedNumber = NO;
             }
                 break;
                 
@@ -247,15 +233,13 @@
         }
         
         BOOL result = flag && (matchResult || isDeleteOperation);
-        if ((!result || isGreaterThanLimitedNumber) && limitedTextField.canSendMsg) {
+        // Send limited msg.
+        if (!result) {
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Wundeclared-selector"// get rid of undeclared selector warning!
             SEL sel = @selector(inputKitDidLimitedIllegalInputText:);
 #pragma clang diagnostic pop
-            limitedTextField.canSendMsg = NO;
             [self sendMsgToObject:self.realDelegate with:textField SEL:sel];
-        }else {
-            limitedTextField.canSendMsg = YES;
         }
         return result;
     }
