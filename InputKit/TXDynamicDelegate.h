@@ -32,7 +32,7 @@ typedef struct {
  @param component 事件产生组件
  @param selector 方法名
  */
-- (void)sendMsgWith:(id)component SEL:(SEL)selector;
+- (void)sendMsgToObject:(id)obj with:(id)component SEL:(SEL)selector;
 
 @end
 

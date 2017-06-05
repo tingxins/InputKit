@@ -32,9 +32,17 @@ typedef NS_ENUM (NSInteger, TXLimitedTextFieldType) {
 @property (assign, nonatomic) IBInspectable NSInteger limitedNumber;
 
 #pragma mark - CustomType
+
+@property (copy, nonatomic) IBInspectable NSString *limitedRegEx;
+
 /** 自定义正则匹配，设置此属性后，其优先级低的属性将失效，如：limitedType等
  *  优先级说明：limitedRegEx > limitedType > (limitedPrefix = limitedSuffix = limitedNumber)
  */
-@property (strong, nonatomic) IBInspectable NSArray *limitedRegExs;
+@property (strong, nonatomic) NSArray *limitedRegExs;
+
+/**
+ 针对部分输入法含高亮选择文本，如：中文输入法
+ */
+@property (assign, nonatomic) BOOL isTextSelecting;
 
 @end

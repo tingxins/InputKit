@@ -43,10 +43,10 @@
     return respondsSelf || (respondsReal && !_isWillBeForwardingLoop);
 }
 
-- (void)sendMsgWith:(id)component SEL:(SEL)selector {
-    if ([self.realDelegate respondsToSelector:selector]) {
+- (void)sendMsgToObject:(id)obj with:(id)component SEL:(SEL)selector {
+    if ([obj respondsToSelector:selector]) {
         void (*funcEntrance)(id, SEL, id) = (void (*)(id, SEL, id)) objc_msgSend;
-        funcEntrance(self.realDelegate, selector, component);
+        funcEntrance(obj, selector, component);
     }
 }
 

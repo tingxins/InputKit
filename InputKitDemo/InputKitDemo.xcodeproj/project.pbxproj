@@ -19,6 +19,7 @@
 		9754B9251EE1710100A7CCA8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9754B9231EE1710100A7CCA8 /* LaunchScreen.storyboard */; };
 		9754B9301EE1710100A7CCA8 /* InputKitDemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9754B92F1EE1710100A7CCA8 /* InputKitDemoTests.m */; };
 		9754B93B1EE1710200A7CCA8 /* InputKitDemoUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9754B93A1EE1710200A7CCA8 /* InputKitDemoUITests.m */; };
+		979065251EE4F04800C04387 /* TXMatchConst.m in Sources */ = {isa = PBXBuildFile; fileRef = 979065241EE4F04800C04387 /* TXMatchConst.m */; };
 		97BC343B1EE194F700A42165 /* TXTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 97BC343A1EE194F700A42165 /* TXTableViewController.m */; };
 		97BC343E1EE4220800A42165 /* TXLimitedTextFieldController.m in Sources */ = {isa = PBXBuildFile; fileRef = 97BC343D1EE4220800A42165 /* TXLimitedTextFieldController.m */; };
 /* End PBXBuildFile section */
@@ -65,6 +66,8 @@
 		9754B9361EE1710200A7CCA8 /* InputKitDemoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = InputKitDemoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9754B93A1EE1710200A7CCA8 /* InputKitDemoUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = InputKitDemoUITests.m; sourceTree = "<group>"; };
 		9754B93C1EE1710200A7CCA8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		979065231EE4F04800C04387 /* TXMatchConst.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TXMatchConst.h; sourceTree = "<group>"; };
+		979065241EE4F04800C04387 /* TXMatchConst.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TXMatchConst.m; sourceTree = "<group>"; };
 		97BC34391EE194F700A42165 /* TXTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TXTableViewController.h; sourceTree = "<group>"; };
 		97BC343A1EE194F700A42165 /* TXTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TXTableViewController.m; sourceTree = "<group>"; };
 		97BC343C1EE4220800A42165 /* TXLimitedTextFieldController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TXLimitedTextFieldController.h; sourceTree = "<group>"; };
@@ -107,6 +110,8 @@
 				9727966A1EE4E697009251F9 /* TXDynamicDelegate.m */,
 				9727966D1EE4E697009251F9 /* TXMatchManager.h */,
 				972796681EE4E697009251F9 /* TXMatchManager.m */,
+				979065231EE4F04800C04387 /* TXMatchConst.h */,
+				979065241EE4F04800C04387 /* TXMatchConst.m */,
 			);
 			name = InputKit;
 			path = ../../InputKit;
@@ -318,6 +323,7 @@
 				972796711EE4E697009251F9 /* TXLimitedTextView.m in Sources */,
 				972796731EE4E697009251F9 /* TXLimitedTextField.m in Sources */,
 				9754B91A1EE1710100A7CCA8 /* AppDelegate.m in Sources */,
+				979065251EE4F04800C04387 /* TXMatchConst.m in Sources */,
 				972796721EE4E697009251F9 /* TXDynamicDelegate.m in Sources */,
 				97BC343E1EE4220800A42165 /* TXLimitedTextFieldController.m in Sources */,
 				97BC343B1EE194F700A42165 /* TXTableViewController.m in Sources */,
