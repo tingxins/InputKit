@@ -7,7 +7,7 @@
 //
 
 #import "TXLimitedTextFieldController.h"
-#import "TXLimitedTextField.h"
+#import "InputKit.h"
 
 @interface TXLimitedTextFieldController ()<UITextFieldDelegate>
 @property (weak, nonatomic) IBOutlet UISegmentedControl *segmentComponent;

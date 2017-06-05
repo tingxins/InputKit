@@ -7,9 +7,9 @@
 //
 
 #import "TXLimitedTextViewController.h"
-#import "TXLimitedTextView.h"
+#import "InputKit.h"
 
-@interface TXLimitedTextViewController ()<UITextFieldDelegate>
+@interface TXLimitedTextViewController ()<UITextViewDelegate>
 @property (weak, nonatomic) IBOutlet TXLimitedTextView *limitedTextView;
 
 @end
