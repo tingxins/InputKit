@@ -165,7 +165,9 @@
     
     if ([textView isKindOfClass:[TXLimitedTextView class]]) {
         TXLimitedTextView *limitedTextView = (TXLimitedTextView *)textView;
-        NSString * matchStr = [NSString stringWithFormat:@"%@%@",textView.text, text];
+        
+        NSMutableString *matchStr = [NSMutableString stringWithString:textView.text];
+        [matchStr insertString:text atIndex:range.location];
         
         BOOL isDeleteOperation = (range.length > 0 && text.length == 0) ? YES : NO;
         switch (limitedTextView.limitedType) {

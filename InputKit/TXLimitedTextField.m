@@ -104,7 +104,6 @@
     
     NSString *currentText = textField.text;
     NSInteger maxLength = self.limitedNumber;
-    NSLog(@"textFieldTextDidChangeNotification:%@", textField.text);
     //获取高亮部分
     UITextRange *selectedRange = [textField markedTextRange];
     UITextPosition *position = [textField positionFromPosition:selectedRange.start offset:0];
@@ -207,7 +206,9 @@
     BOOL matchResult = YES;
     if ([textField isKindOfClass:[TXLimitedTextField class]]) {
         TXLimitedTextField *limitedTextField = (TXLimitedTextField *)textField;
-        NSString *matchStr = [NSString stringWithFormat:@"%@%@",textField.text,string];
+        
+        NSMutableString *matchStr = [NSMutableString stringWithString:textField.text];
+        [matchStr insertString:string atIndex:range.location];
         
         BOOL isDeleteOperation = (range.length > 0 && string.length == 0) ? YES : NO;        
         switch (limitedTextField.limitedType) {
