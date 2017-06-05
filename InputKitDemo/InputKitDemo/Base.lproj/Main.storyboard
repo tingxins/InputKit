@@ -119,7 +119,7 @@
                                     <action selector="segmentValueTypeDidChange:" destination="H2H-5c-YtV" eventType="valueChanged" id="bRb-vv-20L"/>
                                 </connections>
                             </segmentedControl>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="TXLimitedTextField" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="WXg-aA-qky" customClass="TXLimitedTextField">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="TXLimitedTextField" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="WXg-aA-qky" customClass="TXLimitedTextField">
                                 <rect key="frame" x="25" y="160" width="325" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
