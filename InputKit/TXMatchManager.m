@@ -20,7 +20,7 @@
     // 1.匹配以0开头的数字
     NSPredicate *matchZero = [NSPredicate predicateWithFormat:TXRegExHeader, TXLimitedTextFieldTypePriceRegExZero];
     // 2.匹配两位小数、整数
-    NSPredicate *matchValue = [NSPredicate predicateWithFormat:TXRegExHeader,TXLimitedTextFieldTypePriceRegExContentFormat(limitedPrefix, limitedSuffix)];
+    NSPredicate *matchValue = [NSPredicate predicateWithFormat:TXRegExHeader,TXLimitedTextFieldTypePriceRegExContentFormat((long)limitedPrefix, (long)limitedSuffix)];
     BOOL isZero = ![matchZero evaluateWithObject:matchStr];
     BOOL isCorrectValue = [matchValue evaluateWithObject:matchStr];
     return isZero && isCorrectValue ? YES : NO;
