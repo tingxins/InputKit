@@ -68,6 +68,7 @@
 		9754B93C1EE1710200A7CCA8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		979065231EE4F04800C04387 /* TXMatchConst.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TXMatchConst.h; sourceTree = "<group>"; };
 		979065241EE4F04800C04387 /* TXMatchConst.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TXMatchConst.m; sourceTree = "<group>"; };
+		979065261EE5592900C04387 /* InputKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = InputKit.h; sourceTree = "<group>"; };
 		97BC34391EE194F700A42165 /* TXTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TXTableViewController.h; sourceTree = "<group>"; };
 		97BC343A1EE194F700A42165 /* TXTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TXTableViewController.m; sourceTree = "<group>"; };
 		97BC343C1EE4220800A42165 /* TXLimitedTextFieldController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TXLimitedTextFieldController.h; sourceTree = "<group>"; };
@@ -102,6 +103,7 @@
 		972796671EE4E697009251F9 /* InputKit */ = {
 			isa = PBXGroup;
 			children = (
+				979065261EE5592900C04387 /* InputKit.h */,
 				9727966F1EE4E697009251F9 /* TXLimitedTextField.h */,
 				9727966E1EE4E697009251F9 /* TXLimitedTextField.m */,
 				9727966C1EE4E697009251F9 /* TXLimitedTextView.h */,
