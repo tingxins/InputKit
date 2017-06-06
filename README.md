@@ -2,6 +2,18 @@
 <img src="http://image.tingxins.cn/InputKit/InputKit-logo.png" width=888/>
 </p>
 
+
+<p align="center">
+
+<a href="https://github.com/Carthage/Carthage"><img src="https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat"></a>
+<a href="http://cocoadocs.org/docsets/InputKit"><img src="https://img.shields.io/cocoapods/v/InputKit.svg?style=flat"></a>
+<a href="https://github.com/tingxins/InputKit"><img src="https://img.shields.io/cocoapods/p/InputKit.svg?style=flat"></a>
+<a href="https://github.com/tingxins/InputKit"><img src="https://img.shields.io/badge/support-iOS%207%2B-brightgreen.svg"></a>
+<a href="https://www.apache.org/licenses/LICENSE-2.0.html"><img src="http://img.shields.io/cocoapods/l/InputKit.svg?style=flat"></a>
+
+</p>
+
+
 **InputKit** is an Elegant Kit to limits your input text in Objective-C, inspired by [BlocksKit](https://github.com/zwaldowski/BlocksKit).
 
 # Installation
@@ -26,6 +38,21 @@ CocoaPods is a dependency manager for Objective-C, which automates and simplifie
 ## Manual
 
 Download repo's zip, and just drag **ALL** files in the InputKit folder to your projects.
+
+## Carthage
+
+[Carthage](https://github.com/Carthage/Carthage) is a decentralized dependency manager that builds your dependencies and provides you with binary frameworks.
+
+You can install Carthage with [Homebrew](http://brew.sh/) using the following command:
+
+    $ brew update
+    $ brew install carthage
+        
+To integrate **InputKit** or **InputKitSwift**(Will coming soon.) into your Xcode project using Carthage, specify it in your Cartfile:
+
+    github "tingxins/InputKit"
+
+Run carthage to build the frameworks and drag the appropriate framework (InputKit.framework or InputKitSwift.framework) into your Xcode project according to your need. Make sure to add only one framework and not both.
     
 # Usage 
 
@@ -122,6 +149,29 @@ InputKit accessible from the **Attributes Inspector**. These attributes have bee
 
 ![inputKit-demo-inspector-en](http://image.tingxins.cn/InputKit/InputKit-demo-inspector-en.png)
 
+## About Callback
+
+If you want to get a callback when you are input limited text, you should have to do this:
+
+1. set the delegate of your TXLimitedTextField: 
+
+    ```
+    
+    self.limitedTextField.delegate = self;
+    
+    ```
+    
+2. implement -inputKitDidLimitedIllegalInputText: method:
+
+    ```
+    #pragma mark - InputKit 
+    
+    - (void)inputKitDidLimitedIllegalInputText:(id)obj {
+        NSLog(@"If you are input text that limited. this method will be callback. you may do some here!");
+    }
+    
+    ```
+    
 # Communication
 
 Absolutely，you can contribute to this project all the time if you want to.
