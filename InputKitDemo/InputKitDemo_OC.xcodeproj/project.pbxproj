@@ -17,8 +17,8 @@
 		9754B9201EE1710100A7CCA8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9754B91E1EE1710100A7CCA8 /* Main.storyboard */; };
 		9754B9221EE1710100A7CCA8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9754B9211EE1710100A7CCA8 /* Assets.xcassets */; };
 		9754B9251EE1710100A7CCA8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9754B9231EE1710100A7CCA8 /* LaunchScreen.storyboard */; };
-		9754B9301EE1710100A7CCA8 /* InputKitDemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9754B92F1EE1710100A7CCA8 /* InputKitDemoTests.m */; };
-		9754B93B1EE1710200A7CCA8 /* InputKitDemoUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9754B93A1EE1710200A7CCA8 /* InputKitDemoUITests.m */; };
+		9754B9301EE1710100A7CCA8 /* InputKitDemo_OCTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9754B92F1EE1710100A7CCA8 /* InputKitDemo_OCTests.m */; };
+		9754B93B1EE1710200A7CCA8 /* InputKitDemo_OCUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9754B93A1EE1710200A7CCA8 /* InputKitDemo_OCUITests.m */; };
 		979065251EE4F04800C04387 /* TXMatchConst.m in Sources */ = {isa = PBXBuildFile; fileRef = 979065241EE4F04800C04387 /* TXMatchConst.m */; };
 		97BC343B1EE194F700A42165 /* TXTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 97BC343A1EE194F700A42165 /* TXTableViewController.m */; };
 		97BC343E1EE4220800A42165 /* TXLimitedTextFieldController.m in Sources */ = {isa = PBXBuildFile; fileRef = 97BC343D1EE4220800A42165 /* TXLimitedTextFieldController.m */; };
@@ -52,7 +52,7 @@
 		9727966D1EE4E697009251F9 /* TXMatchManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TXMatchManager.h; sourceTree = "<group>"; };
 		9727966E1EE4E697009251F9 /* TXLimitedTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TXLimitedTextField.m; sourceTree = "<group>"; };
 		9727966F1EE4E697009251F9 /* TXLimitedTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TXLimitedTextField.h; sourceTree = "<group>"; };
-		9754B9121EE1710100A7CCA8 /* InputKitDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = InputKitDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		9754B9121EE1710100A7CCA8 /* InputKitDemo_OC.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = InputKitDemo_OC.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9754B9161EE1710100A7CCA8 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		9754B9181EE1710100A7CCA8 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		9754B9191EE1710100A7CCA8 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -60,11 +60,11 @@
 		9754B9211EE1710100A7CCA8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9754B9241EE1710100A7CCA8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9754B9261EE1710100A7CCA8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		9754B92B1EE1710100A7CCA8 /* InputKitDemoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = InputKitDemoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		9754B92F1EE1710100A7CCA8 /* InputKitDemoTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = InputKitDemoTests.m; sourceTree = "<group>"; };
+		9754B92B1EE1710100A7CCA8 /* InputKitDemo_OCTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = InputKitDemo_OCTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		9754B92F1EE1710100A7CCA8 /* InputKitDemo_OCTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = InputKitDemo_OCTests.m; sourceTree = "<group>"; };
 		9754B9311EE1710200A7CCA8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		9754B9361EE1710200A7CCA8 /* InputKitDemoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = InputKitDemoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		9754B93A1EE1710200A7CCA8 /* InputKitDemoUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = InputKitDemoUITests.m; sourceTree = "<group>"; };
+		9754B9361EE1710200A7CCA8 /* InputKitDemo_OCUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = InputKitDemo_OCUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		9754B93A1EE1710200A7CCA8 /* InputKitDemo_OCUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = InputKitDemo_OCUITests.m; sourceTree = "<group>"; };
 		9754B93C1EE1710200A7CCA8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		979065231EE4F04800C04387 /* TXMatchConst.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TXMatchConst.h; sourceTree = "<group>"; };
 		979065241EE4F04800C04387 /* TXMatchConst.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TXMatchConst.m; sourceTree = "<group>"; };
@@ -122,9 +122,9 @@
 		9754B9091EE1710100A7CCA8 = {
 			isa = PBXGroup;
 			children = (
-				9754B9141EE1710100A7CCA8 /* InputKitDemo */,
-				9754B92E1EE1710100A7CCA8 /* InputKitDemoTests */,
-				9754B9391EE1710200A7CCA8 /* InputKitDemoUITests */,
+				9754B9141EE1710100A7CCA8 /* InputKitDemo_OC */,
+				9754B92E1EE1710100A7CCA8 /* InputKitDemo_OCTests */,
+				9754B9391EE1710200A7CCA8 /* InputKitDemo_OCUITests */,
 				9754B9131EE1710100A7CCA8 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -132,14 +132,14 @@
 		9754B9131EE1710100A7CCA8 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				9754B9121EE1710100A7CCA8 /* InputKitDemo.app */,
-				9754B92B1EE1710100A7CCA8 /* InputKitDemoTests.xctest */,
-				9754B9361EE1710200A7CCA8 /* InputKitDemoUITests.xctest */,
+				9754B9121EE1710100A7CCA8 /* InputKitDemo_OC.app */,
+				9754B92B1EE1710100A7CCA8 /* InputKitDemo_OCTests.xctest */,
+				9754B9361EE1710200A7CCA8 /* InputKitDemo_OCUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		9754B9141EE1710100A7CCA8 /* InputKitDemo */ = {
+		9754B9141EE1710100A7CCA8 /* InputKitDemo_OC */ = {
 			isa = PBXGroup;
 			children = (
 				972796671EE4E697009251F9 /* InputKit */,
@@ -157,7 +157,7 @@
 				9754B9261EE1710100A7CCA8 /* Info.plist */,
 				9754B9151EE1710100A7CCA8 /* Supporting Files */,
 			);
-			path = InputKitDemo;
+			path = InputKitDemo_OC;
 			sourceTree = "<group>";
 		};
 		9754B9151EE1710100A7CCA8 /* Supporting Files */ = {
@@ -168,30 +168,30 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		9754B92E1EE1710100A7CCA8 /* InputKitDemoTests */ = {
+		9754B92E1EE1710100A7CCA8 /* InputKitDemo_OCTests */ = {
 			isa = PBXGroup;
 			children = (
-				9754B92F1EE1710100A7CCA8 /* InputKitDemoTests.m */,
+				9754B92F1EE1710100A7CCA8 /* InputKitDemo_OCTests.m */,
 				9754B9311EE1710200A7CCA8 /* Info.plist */,
 			);
-			path = InputKitDemoTests;
+			path = InputKitDemo_OCTests;
 			sourceTree = "<group>";
 		};
-		9754B9391EE1710200A7CCA8 /* InputKitDemoUITests */ = {
+		9754B9391EE1710200A7CCA8 /* InputKitDemo_OCUITests */ = {
 			isa = PBXGroup;
 			children = (
-				9754B93A1EE1710200A7CCA8 /* InputKitDemoUITests.m */,
+				9754B93A1EE1710200A7CCA8 /* InputKitDemo_OCUITests.m */,
 				9754B93C1EE1710200A7CCA8 /* Info.plist */,
 			);
-			path = InputKitDemoUITests;
+			path = InputKitDemo_OCUITests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		9754B9111EE1710100A7CCA8 /* InputKitDemo */ = {
+		9754B9111EE1710100A7CCA8 /* InputKitDemo_OC */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 9754B93F1EE1710200A7CCA8 /* Build configuration list for PBXNativeTarget "InputKitDemo" */;
+			buildConfigurationList = 9754B93F1EE1710200A7CCA8 /* Build configuration list for PBXNativeTarget "InputKitDemo_OC" */;
 			buildPhases = (
 				9754B90E1EE1710100A7CCA8 /* Sources */,
 				9754B90F1EE1710100A7CCA8 /* Frameworks */,
@@ -201,14 +201,14 @@
 			);
 			dependencies = (
 			);
-			name = InputKitDemo;
+			name = InputKitDemo_OC;
 			productName = InputKitDemo;
-			productReference = 9754B9121EE1710100A7CCA8 /* InputKitDemo.app */;
+			productReference = 9754B9121EE1710100A7CCA8 /* InputKitDemo_OC.app */;
 			productType = "com.apple.product-type.application";
 		};
-		9754B92A1EE1710100A7CCA8 /* InputKitDemoTests */ = {
+		9754B92A1EE1710100A7CCA8 /* InputKitDemo_OCTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 9754B9421EE1710200A7CCA8 /* Build configuration list for PBXNativeTarget "InputKitDemoTests" */;
+			buildConfigurationList = 9754B9421EE1710200A7CCA8 /* Build configuration list for PBXNativeTarget "InputKitDemo_OCTests" */;
 			buildPhases = (
 				9754B9271EE1710100A7CCA8 /* Sources */,
 				9754B9281EE1710100A7CCA8 /* Frameworks */,
@@ -219,14 +219,14 @@
 			dependencies = (
 				9754B92D1EE1710100A7CCA8 /* PBXTargetDependency */,
 			);
-			name = InputKitDemoTests;
+			name = InputKitDemo_OCTests;
 			productName = InputKitDemoTests;
-			productReference = 9754B92B1EE1710100A7CCA8 /* InputKitDemoTests.xctest */;
+			productReference = 9754B92B1EE1710100A7CCA8 /* InputKitDemo_OCTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		9754B9351EE1710200A7CCA8 /* InputKitDemoUITests */ = {
+		9754B9351EE1710200A7CCA8 /* InputKitDemo_OCUITests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 9754B9451EE1710200A7CCA8 /* Build configuration list for PBXNativeTarget "InputKitDemoUITests" */;
+			buildConfigurationList = 9754B9451EE1710200A7CCA8 /* Build configuration list for PBXNativeTarget "InputKitDemo_OCUITests" */;
 			buildPhases = (
 				9754B9321EE1710200A7CCA8 /* Sources */,
 				9754B9331EE1710200A7CCA8 /* Frameworks */,
@@ -237,9 +237,9 @@
 			dependencies = (
 				9754B9381EE1710200A7CCA8 /* PBXTargetDependency */,
 			);
-			name = InputKitDemoUITests;
+			name = InputKitDemo_OCUITests;
 			productName = InputKitDemoUITests;
-			productReference = 9754B9361EE1710200A7CCA8 /* InputKitDemoUITests.xctest */;
+			productReference = 9754B9361EE1710200A7CCA8 /* InputKitDemo_OCUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
@@ -270,7 +270,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 9754B90D1EE1710100A7CCA8 /* Build configuration list for PBXProject "InputKitDemo" */;
+			buildConfigurationList = 9754B90D1EE1710100A7CCA8 /* Build configuration list for PBXProject "InputKitDemo_OC" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -283,9 +283,9 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				9754B9111EE1710100A7CCA8 /* InputKitDemo */,
-				9754B92A1EE1710100A7CCA8 /* InputKitDemoTests */,
-				9754B9351EE1710200A7CCA8 /* InputKitDemoUITests */,
+				9754B9111EE1710100A7CCA8 /* InputKitDemo_OC */,
+				9754B92A1EE1710100A7CCA8 /* InputKitDemo_OCTests */,
+				9754B9351EE1710200A7CCA8 /* InputKitDemo_OCUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -339,7 +339,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9754B9301EE1710100A7CCA8 /* InputKitDemoTests.m in Sources */,
+				9754B9301EE1710100A7CCA8 /* InputKitDemo_OCTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -347,7 +347,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9754B93B1EE1710200A7CCA8 /* InputKitDemoUITests.m in Sources */,
+				9754B93B1EE1710200A7CCA8 /* InputKitDemo_OCUITests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -356,12 +356,12 @@
 /* Begin PBXTargetDependency section */
 		9754B92D1EE1710100A7CCA8 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 9754B9111EE1710100A7CCA8 /* InputKitDemo */;
+			target = 9754B9111EE1710100A7CCA8 /* InputKitDemo_OC */;
 			targetProxy = 9754B92C1EE1710100A7CCA8 /* PBXContainerItemProxy */;
 		};
 		9754B9381EE1710200A7CCA8 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 9754B9111EE1710100A7CCA8 /* InputKitDemo */;
+			target = 9754B9111EE1710100A7CCA8 /* InputKitDemo_OC */;
 			targetProxy = 9754B9371EE1710200A7CCA8 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -483,7 +483,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = QZ2B7EZFJP;
-				INFOPLIST_FILE = InputKitDemo/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/InputKitDemo_OC/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.tingxins.demo.InputKitDemo;
@@ -496,7 +496,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = QZ2B7EZFJP;
-				INFOPLIST_FILE = InputKitDemo/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/InputKitDemo_OC/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.tingxins.demo.InputKitDemo;
@@ -513,7 +513,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.tingxins.demo.InputKitDemoTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/InputKitDemo.app/InputKitDemo";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/InputKitDemo_OC.app/InputKitDemo_OC";
 			};
 			name = Debug;
 		};
@@ -526,7 +526,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.tingxins.demo.InputKitDemoTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/InputKitDemo.app/InputKitDemo";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/InputKitDemo_OC.app/InputKitDemo_OC";
 			};
 			name = Release;
 		};
@@ -557,7 +557,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		9754B90D1EE1710100A7CCA8 /* Build configuration list for PBXProject "InputKitDemo" */ = {
+		9754B90D1EE1710100A7CCA8 /* Build configuration list for PBXProject "InputKitDemo_OC" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				9754B93D1EE1710200A7CCA8 /* Debug */,
@@ -566,7 +566,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		9754B93F1EE1710200A7CCA8 /* Build configuration list for PBXNativeTarget "InputKitDemo" */ = {
+		9754B93F1EE1710200A7CCA8 /* Build configuration list for PBXNativeTarget "InputKitDemo_OC" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				9754B9401EE1710200A7CCA8 /* Debug */,
@@ -575,7 +575,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		9754B9421EE1710200A7CCA8 /* Build configuration list for PBXNativeTarget "InputKitDemoTests" */ = {
+		9754B9421EE1710200A7CCA8 /* Build configuration list for PBXNativeTarget "InputKitDemo_OCTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				9754B9431EE1710200A7CCA8 /* Debug */,
@@ -584,7 +584,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		9754B9451EE1710200A7CCA8 /* Build configuration list for PBXNativeTarget "InputKitDemoUITests" */ = {
+		9754B9451EE1710200A7CCA8 /* Build configuration list for PBXNativeTarget "InputKitDemo_OCUITests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				9754B9461EE1710200A7CCA8 /* Debug */,

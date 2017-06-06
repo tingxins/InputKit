@@ -9,7 +9,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--InputKitDemo-->
+        <!--InputKitDemo_OC-->
         <scene sceneID="Knv-ls-nQR">
             <objects>
                 <tableViewController id="Hp3-9n-reF" sceneMemberID="viewController">
@@ -21,18 +21,17 @@
                             <rect key="frame" x="0.0" y="116" width="375" height="485"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
-                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="aAf-dG-CmU">
-                                    <rect key="frame" x="87" y="142.5" width="200" height="200"/>
-                                    <constraints>
-                                        <constraint firstAttribute="width" constant="200" id="Btf-9o-M3v"/>
-                                        <constraint firstAttribute="height" constant="200" id="eI9-0a-ZO8"/>
-                                    </constraints>
-                                </imageView>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="InputKit" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hvb-vT-4Kv">
+                                    <rect key="frame" x="111.5" y="216" width="152.5" height="54"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="45"/>
+                                    <color key="textColor" red="0.40784313729999999" green="0.40784313729999999" blue="0.40784313729999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
                             </subviews>
                             <color key="backgroundColor" red="0.93725490570000003" green="0.93725490570000003" blue="0.95686274770000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <constraints>
-                                <constraint firstItem="aAf-dG-CmU" firstAttribute="centerY" secondItem="JPq-5I-Gl8" secondAttribute="centerY" id="hkP-G7-sAg"/>
-                                <constraint firstItem="aAf-dG-CmU" firstAttribute="centerX" secondItem="JPq-5I-Gl8" secondAttribute="centerX" id="iIT-qi-w8B"/>
+                                <constraint firstItem="hvb-vT-4Kv" firstAttribute="centerX" secondItem="JPq-5I-Gl8" secondAttribute="centerX" id="6pu-J5-f11"/>
+                                <constraint firstItem="hvb-vT-4Kv" firstAttribute="centerY" secondItem="JPq-5I-Gl8" secondAttribute="centerY" id="eA2-HC-PUQ"/>
                             </constraints>
                         </view>
                         <sections>
@@ -86,7 +85,9 @@
                             <outlet property="delegate" destination="Hp3-9n-reF" id="Sre-nf-Bw3"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="InputKitDemo" id="iRh-1d-Mk3"/>
+                    <navigationItem key="navigationItem" title="InputKitDemo_OC" id="iRh-1d-Mk3">
+                        <barButtonItem key="backBarButtonItem" title=" " id="XoW-Q3-74L"/>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Cav-mc-uQg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -181,7 +182,7 @@
                                 </userDefinedRuntimeAttributes>
                             </textField>
                             <textField hidden="YES" opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="输入正则表达式" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="stf-Gr-caq">
-                                <rect key="frame" x="150" y="205.5" width="200" height="30"/>
+                                <rect key="frame" x="150" y="205" width="200" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
@@ -199,13 +200,13 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <switch hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="llW-Oj-CCd">
-                                <rect key="frame" x="150" y="369.5" width="51" height="31"/>
+                                <rect key="frame" x="150" y="369" width="51" height="31"/>
                                 <connections>
                                     <action selector="textSelectSwitchValueChange:" destination="H2H-5c-YtV" eventType="valueChanged" id="Tan-02-VaE"/>
                                 </connections>
                             </switch>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oSl-hz-XFd">
-                                <rect key="frame" x="187.5" y="152" width="0.0" height="0.0"/>
+                                <rect key="frame" x="187" y="152" width="0.0" height="0.0"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>

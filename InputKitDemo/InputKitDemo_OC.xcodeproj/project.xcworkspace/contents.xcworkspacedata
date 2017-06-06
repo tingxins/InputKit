@@ -2,6 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "self:InputKitDemo.xcodeproj">
+      location = "self:/Volumes/QTINGS 1/GitHub/InputKit/InputKitDemo/InputKitDemo_OC.xcodeproj">
    </FileRef>
 </Workspace>
