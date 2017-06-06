@@ -14,6 +14,9 @@
 		97F5EDCB1EE63D830083F0FB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 97F5EDC91EE63D830083F0FB /* LaunchScreen.storyboard */; };
 		97F5EDD61EE63D830083F0FB /* InputKitDemo_SwiftTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97F5EDD51EE63D830083F0FB /* InputKitDemo_SwiftTests.swift */; };
 		97F5EDE11EE63D830083F0FB /* InputKitDemo_SwiftUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97F5EDE01EE63D830083F0FB /* InputKitDemo_SwiftUITests.swift */; };
+		97F5EDF01EE6418A0083F0FB /* LimitedTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97F5EDEF1EE6418A0083F0FB /* LimitedTextField.swift */; };
+		97F5EDF21EE641B00083F0FB /* LimitedTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97F5EDF11EE641B00083F0FB /* LimitedTextView.swift */; };
+		97F5EDF41EE64BE60083F0FB /* Common.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97F5EDF31EE64BE60083F0FB /* Common.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +50,9 @@
 		97F5EDDC1EE63D830083F0FB /* InputKitDemo_SwiftUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = InputKitDemo_SwiftUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		97F5EDE01EE63D830083F0FB /* InputKitDemo_SwiftUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputKitDemo_SwiftUITests.swift; sourceTree = "<group>"; };
 		97F5EDE21EE63D830083F0FB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		97F5EDEF1EE6418A0083F0FB /* LimitedTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LimitedTextField.swift; sourceTree = "<group>"; };
+		97F5EDF11EE641B00083F0FB /* LimitedTextView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LimitedTextView.swift; sourceTree = "<group>"; };
+		97F5EDF31EE64BE60083F0FB /* Common.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Common.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,6 +103,7 @@
 		97F5EDBF1EE63D820083F0FB /* InputKitDemo_Swift */ = {
 			isa = PBXGroup;
 			children = (
+				97F5EDEE1EE641120083F0FB /* InputKitSwift */,
 				97F5EDC01EE63D820083F0FB /* AppDelegate.swift */,
 				97F5EDC21EE63D820083F0FB /* ViewController.swift */,
 				97F5EDC41EE63D830083F0FB /* Main.storyboard */,
@@ -123,6 +130,17 @@
 				97F5EDE21EE63D830083F0FB /* Info.plist */,
 			);
 			path = InputKitDemo_SwiftUITests;
+			sourceTree = "<group>";
+		};
+		97F5EDEE1EE641120083F0FB /* InputKitSwift */ = {
+			isa = PBXGroup;
+			children = (
+				97F5EDEF1EE6418A0083F0FB /* LimitedTextField.swift */,
+				97F5EDF11EE641B00083F0FB /* LimitedTextView.swift */,
+				97F5EDF31EE64BE60083F0FB /* Common.swift */,
+			);
+			name = InputKitSwift;
+			path = ../../../InputKitSwift;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -262,8 +280,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				97F5EDF21EE641B00083F0FB /* LimitedTextView.swift in Sources */,
 				97F5EDC31EE63D820083F0FB /* ViewController.swift in Sources */,
 				97F5EDC11EE63D820083F0FB /* AppDelegate.swift in Sources */,
+				97F5EDF41EE64BE60083F0FB /* Common.swift in Sources */,
+				97F5EDF01EE6418A0083F0FB /* LimitedTextField.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -516,6 +537,7 @@
 				97F5EDE71EE63D830083F0FB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		97F5EDE81EE63D830083F0FB /* Build configuration list for PBXNativeTarget "InputKitDemo_SwiftTests" */ = {
 			isa = XCConfigurationList;
@@ -524,6 +546,7 @@
 				97F5EDEA1EE63D830083F0FB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		97F5EDEB1EE63D830083F0FB /* Build configuration list for PBXNativeTarget "InputKitDemo_SwiftUITests" */ = {
 			isa = XCConfigurationList;
@@ -532,6 +555,7 @@
 				97F5EDED1EE63D830083F0FB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
