@@ -8,10 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		970454481EE42284001F77D6 /* TXLimitedTextViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 970454471EE42284001F77D6 /* TXLimitedTextViewController.m */; };
-		972796701EE4E697009251F9 /* TXMatchManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 972796681EE4E697009251F9 /* TXMatchManager.m */; };
-		972796711EE4E697009251F9 /* TXLimitedTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 972796691EE4E697009251F9 /* TXLimitedTextView.m */; };
-		972796721EE4E697009251F9 /* TXDynamicDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9727966A1EE4E697009251F9 /* TXDynamicDelegate.m */; };
-		972796731EE4E697009251F9 /* TXLimitedTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 9727966E1EE4E697009251F9 /* TXLimitedTextField.m */; };
 		9754B9171EE1710100A7CCA8 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 9754B9161EE1710100A7CCA8 /* main.m */; };
 		9754B91A1EE1710100A7CCA8 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9754B9191EE1710100A7CCA8 /* AppDelegate.m */; };
 		9754B9201EE1710100A7CCA8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9754B91E1EE1710100A7CCA8 /* Main.storyboard */; };
@@ -19,9 +15,13 @@
 		9754B9251EE1710100A7CCA8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9754B9231EE1710100A7CCA8 /* LaunchScreen.storyboard */; };
 		9754B9301EE1710100A7CCA8 /* InputKitDemo_OCTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9754B92F1EE1710100A7CCA8 /* InputKitDemo_OCTests.m */; };
 		9754B93B1EE1710200A7CCA8 /* InputKitDemo_OCUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9754B93A1EE1710200A7CCA8 /* InputKitDemo_OCUITests.m */; };
-		979065251EE4F04800C04387 /* TXMatchConst.m in Sources */ = {isa = PBXBuildFile; fileRef = 979065241EE4F04800C04387 /* TXMatchConst.m */; };
 		97BC343B1EE194F700A42165 /* TXTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 97BC343A1EE194F700A42165 /* TXTableViewController.m */; };
 		97BC343E1EE4220800A42165 /* TXLimitedTextFieldController.m in Sources */ = {isa = PBXBuildFile; fileRef = 97BC343D1EE4220800A42165 /* TXLimitedTextFieldController.m */; };
+		97F5EDAF1EE63CB50083F0FB /* TXMatchManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 97F5EDA41EE63CB50083F0FB /* TXMatchManager.m */; };
+		97F5EDB01EE63CB50083F0FB /* TXDynamicDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 97F5EDA51EE63CB50083F0FB /* TXDynamicDelegate.m */; };
+		97F5EDB11EE63CB50083F0FB /* TXLimitedTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 97F5EDA81EE63CB50083F0FB /* TXLimitedTextView.m */; };
+		97F5EDB21EE63CB50083F0FB /* TXLimitedTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 97F5EDAC1EE63CB50083F0FB /* TXLimitedTextField.m */; };
+		97F5EDB31EE63CB50083F0FB /* TXMatchConst.m in Sources */ = {isa = PBXBuildFile; fileRef = 97F5EDAE1EE63CB50083F0FB /* TXMatchConst.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,14 +44,6 @@
 /* Begin PBXFileReference section */
 		970454461EE42284001F77D6 /* TXLimitedTextViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TXLimitedTextViewController.h; sourceTree = "<group>"; };
 		970454471EE42284001F77D6 /* TXLimitedTextViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TXLimitedTextViewController.m; sourceTree = "<group>"; };
-		972796681EE4E697009251F9 /* TXMatchManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TXMatchManager.m; sourceTree = "<group>"; };
-		972796691EE4E697009251F9 /* TXLimitedTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TXLimitedTextView.m; sourceTree = "<group>"; };
-		9727966A1EE4E697009251F9 /* TXDynamicDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TXDynamicDelegate.m; sourceTree = "<group>"; };
-		9727966B1EE4E697009251F9 /* TXDynamicDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TXDynamicDelegate.h; sourceTree = "<group>"; };
-		9727966C1EE4E697009251F9 /* TXLimitedTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TXLimitedTextView.h; sourceTree = "<group>"; };
-		9727966D1EE4E697009251F9 /* TXMatchManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TXMatchManager.h; sourceTree = "<group>"; };
-		9727966E1EE4E697009251F9 /* TXLimitedTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TXLimitedTextField.m; sourceTree = "<group>"; };
-		9727966F1EE4E697009251F9 /* TXLimitedTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TXLimitedTextField.h; sourceTree = "<group>"; };
 		9754B9121EE1710100A7CCA8 /* InputKitDemo_OC.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = InputKitDemo_OC.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9754B9161EE1710100A7CCA8 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		9754B9181EE1710100A7CCA8 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -66,13 +58,21 @@
 		9754B9361EE1710200A7CCA8 /* InputKitDemo_OCUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = InputKitDemo_OCUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9754B93A1EE1710200A7CCA8 /* InputKitDemo_OCUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = InputKitDemo_OCUITests.m; sourceTree = "<group>"; };
 		9754B93C1EE1710200A7CCA8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		979065231EE4F04800C04387 /* TXMatchConst.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TXMatchConst.h; sourceTree = "<group>"; };
-		979065241EE4F04800C04387 /* TXMatchConst.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TXMatchConst.m; sourceTree = "<group>"; };
-		979065261EE5592900C04387 /* InputKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = InputKit.h; sourceTree = "<group>"; };
 		97BC34391EE194F700A42165 /* TXTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TXTableViewController.h; sourceTree = "<group>"; };
 		97BC343A1EE194F700A42165 /* TXTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TXTableViewController.m; sourceTree = "<group>"; };
 		97BC343C1EE4220800A42165 /* TXLimitedTextFieldController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TXLimitedTextFieldController.h; sourceTree = "<group>"; };
 		97BC343D1EE4220800A42165 /* TXLimitedTextFieldController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TXLimitedTextFieldController.m; sourceTree = "<group>"; };
+		97F5EDA41EE63CB50083F0FB /* TXMatchManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TXMatchManager.m; sourceTree = "<group>"; };
+		97F5EDA51EE63CB50083F0FB /* TXDynamicDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TXDynamicDelegate.m; sourceTree = "<group>"; };
+		97F5EDA61EE63CB50083F0FB /* TXLimitedTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TXLimitedTextView.h; sourceTree = "<group>"; };
+		97F5EDA71EE63CB50083F0FB /* TXLimitedTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TXLimitedTextField.h; sourceTree = "<group>"; };
+		97F5EDA81EE63CB50083F0FB /* TXLimitedTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TXLimitedTextView.m; sourceTree = "<group>"; };
+		97F5EDA91EE63CB50083F0FB /* InputKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InputKit.h; sourceTree = "<group>"; };
+		97F5EDAA1EE63CB50083F0FB /* TXMatchManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TXMatchManager.h; sourceTree = "<group>"; };
+		97F5EDAB1EE63CB50083F0FB /* TXDynamicDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TXDynamicDelegate.h; sourceTree = "<group>"; };
+		97F5EDAC1EE63CB50083F0FB /* TXLimitedTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TXLimitedTextField.m; sourceTree = "<group>"; };
+		97F5EDAD1EE63CB50083F0FB /* TXMatchConst.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TXMatchConst.h; sourceTree = "<group>"; };
+		97F5EDAE1EE63CB50083F0FB /* TXMatchConst.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TXMatchConst.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,25 +100,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		972796671EE4E697009251F9 /* InputKit */ = {
-			isa = PBXGroup;
-			children = (
-				979065261EE5592900C04387 /* InputKit.h */,
-				9727966F1EE4E697009251F9 /* TXLimitedTextField.h */,
-				9727966E1EE4E697009251F9 /* TXLimitedTextField.m */,
-				9727966C1EE4E697009251F9 /* TXLimitedTextView.h */,
-				972796691EE4E697009251F9 /* TXLimitedTextView.m */,
-				9727966B1EE4E697009251F9 /* TXDynamicDelegate.h */,
-				9727966A1EE4E697009251F9 /* TXDynamicDelegate.m */,
-				9727966D1EE4E697009251F9 /* TXMatchManager.h */,
-				972796681EE4E697009251F9 /* TXMatchManager.m */,
-				979065231EE4F04800C04387 /* TXMatchConst.h */,
-				979065241EE4F04800C04387 /* TXMatchConst.m */,
-			);
-			name = InputKit;
-			path = ../../InputKit;
-			sourceTree = "<group>";
-		};
 		9754B9091EE1710100A7CCA8 = {
 			isa = PBXGroup;
 			children = (
@@ -142,7 +123,7 @@
 		9754B9141EE1710100A7CCA8 /* InputKitDemo_OC */ = {
 			isa = PBXGroup;
 			children = (
-				972796671EE4E697009251F9 /* InputKit */,
+				97F5EDA31EE63CB50083F0FB /* InputKit */,
 				9754B9181EE1710100A7CCA8 /* AppDelegate.h */,
 				9754B9191EE1710100A7CCA8 /* AppDelegate.m */,
 				97BC34391EE194F700A42165 /* TXTableViewController.h */,
@@ -184,6 +165,25 @@
 				9754B93C1EE1710200A7CCA8 /* Info.plist */,
 			);
 			path = InputKitDemo_OCUITests;
+			sourceTree = "<group>";
+		};
+		97F5EDA31EE63CB50083F0FB /* InputKit */ = {
+			isa = PBXGroup;
+			children = (
+				97F5EDA91EE63CB50083F0FB /* InputKit.h */,
+				97F5EDA71EE63CB50083F0FB /* TXLimitedTextField.h */,
+				97F5EDAC1EE63CB50083F0FB /* TXLimitedTextField.m */,
+				97F5EDA61EE63CB50083F0FB /* TXLimitedTextView.h */,
+				97F5EDA81EE63CB50083F0FB /* TXLimitedTextView.m */,
+				97F5EDAB1EE63CB50083F0FB /* TXDynamicDelegate.h */,
+				97F5EDA51EE63CB50083F0FB /* TXDynamicDelegate.m */,
+				97F5EDAA1EE63CB50083F0FB /* TXMatchManager.h */,
+				97F5EDA41EE63CB50083F0FB /* TXMatchManager.m */,
+				97F5EDAD1EE63CB50083F0FB /* TXMatchConst.h */,
+				97F5EDAE1EE63CB50083F0FB /* TXMatchConst.m */,
+			);
+			name = InputKit;
+			path = ../../../InputKit;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -322,16 +322,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				972796711EE4E697009251F9 /* TXLimitedTextView.m in Sources */,
-				972796731EE4E697009251F9 /* TXLimitedTextField.m in Sources */,
 				9754B91A1EE1710100A7CCA8 /* AppDelegate.m in Sources */,
-				979065251EE4F04800C04387 /* TXMatchConst.m in Sources */,
-				972796721EE4E697009251F9 /* TXDynamicDelegate.m in Sources */,
+				97F5EDB21EE63CB50083F0FB /* TXLimitedTextField.m in Sources */,
 				97BC343E1EE4220800A42165 /* TXLimitedTextFieldController.m in Sources */,
+				97F5EDB31EE63CB50083F0FB /* TXMatchConst.m in Sources */,
+				97F5EDB11EE63CB50083F0FB /* TXLimitedTextView.m in Sources */,
 				97BC343B1EE194F700A42165 /* TXTableViewController.m in Sources */,
 				970454481EE42284001F77D6 /* TXLimitedTextViewController.m in Sources */,
 				9754B9171EE1710100A7CCA8 /* main.m in Sources */,
-				972796701EE4E697009251F9 /* TXMatchManager.m in Sources */,
+				97F5EDAF1EE63CB50083F0FB /* TXMatchManager.m in Sources */,
+				97F5EDB01EE63CB50083F0FB /* TXDynamicDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
