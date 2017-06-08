@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9780C6B71EE901CD00924DD1 /* LimitedDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9780C6B61EE901CD00924DD1 /* LimitedDelegate.swift */; };
 		97F5EDC11EE63D820083F0FB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97F5EDC01EE63D820083F0FB /* AppDelegate.swift */; };
 		97F5EDC31EE63D820083F0FB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97F5EDC21EE63D820083F0FB /* ViewController.swift */; };
 		97F5EDC61EE63D830083F0FB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 97F5EDC41EE63D830083F0FB /* Main.storyboard */; };
@@ -37,6 +38,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		9780C6B61EE901CD00924DD1 /* LimitedDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LimitedDelegate.swift; sourceTree = "<group>"; };
 		97F5EDBD1EE63D820083F0FB /* InputKitDemo_Swift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = InputKitDemo_Swift.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		97F5EDC01EE63D820083F0FB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		97F5EDC21EE63D820083F0FB /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -138,6 +140,7 @@
 				97F5EDEF1EE6418A0083F0FB /* LimitedTextField.swift */,
 				97F5EDF11EE641B00083F0FB /* LimitedTextView.swift */,
 				97F5EDF31EE64BE60083F0FB /* Common.swift */,
+				9780C6B61EE901CD00924DD1 /* LimitedDelegate.swift */,
 			);
 			name = InputKitSwift;
 			path = ../../../InputKitSwift;
@@ -283,6 +286,7 @@
 				97F5EDF21EE641B00083F0FB /* LimitedTextView.swift in Sources */,
 				97F5EDC31EE63D820083F0FB /* ViewController.swift in Sources */,
 				97F5EDC11EE63D820083F0FB /* AppDelegate.swift in Sources */,
+				9780C6B71EE901CD00924DD1 /* LimitedDelegate.swift in Sources */,
 				97F5EDF41EE64BE60083F0FB /* Common.swift in Sources */,
 				97F5EDF01EE6418A0083F0FB /* LimitedTextField.swift in Sources */,
 			);
@@ -440,10 +444,11 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = QZ2B7EZFJP;
 				INFOPLIST_FILE = InputKitDemo_Swift/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.tingxins.demo.InputKitDemo-Swift";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
+				SWIFT_VERSION = 4.0;
 			};
 			name = Debug;
 		};
@@ -453,10 +458,11 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = QZ2B7EZFJP;
 				INFOPLIST_FILE = InputKitDemo_Swift/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.tingxins.demo.InputKitDemo-Swift";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
+				SWIFT_VERSION = 4.0;
 			};
 			name = Release;
 		};
