@@ -62,6 +62,7 @@
 
 - (void)clearCache {
     _historyText = nil;
+    self.text = @"";
 }
 
 #pragma mark - Setter + Getter Methods

@@ -45,4 +45,6 @@ typedef NS_ENUM (NSInteger, TXLimitedTextFieldType) {
  */
 @property (assign, nonatomic) IBInspectable BOOL isTextSelecting;
 
+- (void)clearCache;
+
 @end

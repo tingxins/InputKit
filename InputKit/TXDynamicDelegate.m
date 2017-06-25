@@ -100,7 +100,7 @@ static dispatch_queue_t tx_getBackgroundQueue(void)
 
 /**
  返回选择子
- @notes 本代码取自 BlocksKit
+ @notes 取自 BlocksKit
  */
 static inline SEL getSelectorWithPattern(const char *prefix, const char *key, const char *suffix) {
     size_t prefixLength = prefix ? strlen(prefix) : 0;

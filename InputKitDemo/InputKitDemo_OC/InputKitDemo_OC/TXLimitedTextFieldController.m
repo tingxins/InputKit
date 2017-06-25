@@ -57,7 +57,7 @@
 #pragma mark - Target Methods
 
 - (IBAction)segmentValueTypeDidChange:(UISegmentedControl *)sender {
-    self.limitedTextField.text = @"";
+    [self.limitedTextField clearCache];
     self.tipLabel.text = @"";
     [self updateInputLimitedValue:nil];
     switch (sender.selectedSegmentIndex) {
