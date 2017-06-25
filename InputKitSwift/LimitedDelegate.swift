@@ -1,5 +1,5 @@
 //
-//  LimitedDynamicDelegate.swift
+//  LimitedDelegate.swift
 //  InputKitDemo_Swift
 //
 //  Created by tingxins on 08/06/2017.
@@ -8,20 +8,18 @@
 
 import UIKit
 
-class LimitedDynamicDelegate: NSProxy {
+internal class LimitedDelegate: NSObject {
     
-    var key: String = ""
+    private(set) var realDelegate: AnyObject?
     
-    public func `init`(key: String) {
-        self.key = key
+    init(realDelegate: AnyObject?) {
+        self.realDelegate = realDelegate
     }
-    
-    override func forwardInvocation(_ invocation: NSInvocation) {
-        <#code#>
+}
+
+extension LimitedDelegate {
+    @objc func sendMsgTo(obj: AnyObject, with component: AnyObject, sel: Selector) {
+        guard obj.responds(to: sel) else { return }
+        let _ = obj.perform(sel, with: component)
     }
-    
-    override func responds(to aSelector: Selector!) -> Bool {
-        return super.responds(to: aSelector)
-    }
-    
 }

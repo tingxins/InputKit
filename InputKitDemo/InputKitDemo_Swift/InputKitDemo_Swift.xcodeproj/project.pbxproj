@@ -7,7 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		976B4D511EE93C95004205A1 /* MatchConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 976B4D501EE93C95004205A1 /* MatchConstant.swift */; };
 		9780C6B71EE901CD00924DD1 /* LimitedDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9780C6B61EE901CD00924DD1 /* LimitedDelegate.swift */; };
+		9780C6B91EE9373C00924DD1 /* MatchManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9780C6B81EE9373C00924DD1 /* MatchManager.swift */; };
+		97EE49C51EEAA696009798F5 /* InputKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97EE49C41EEAA696009798F5 /* InputKit.swift */; };
 		97F5EDC11EE63D820083F0FB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97F5EDC01EE63D820083F0FB /* AppDelegate.swift */; };
 		97F5EDC31EE63D820083F0FB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97F5EDC21EE63D820083F0FB /* ViewController.swift */; };
 		97F5EDC61EE63D830083F0FB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 97F5EDC41EE63D830083F0FB /* Main.storyboard */; };
@@ -17,7 +20,6 @@
 		97F5EDE11EE63D830083F0FB /* InputKitDemo_SwiftUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97F5EDE01EE63D830083F0FB /* InputKitDemo_SwiftUITests.swift */; };
 		97F5EDF01EE6418A0083F0FB /* LimitedTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97F5EDEF1EE6418A0083F0FB /* LimitedTextField.swift */; };
 		97F5EDF21EE641B00083F0FB /* LimitedTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97F5EDF11EE641B00083F0FB /* LimitedTextView.swift */; };
-		97F5EDF41EE64BE60083F0FB /* Common.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97F5EDF31EE64BE60083F0FB /* Common.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,7 +40,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		976B4D501EE93C95004205A1 /* MatchConstant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchConstant.swift; sourceTree = "<group>"; };
 		9780C6B61EE901CD00924DD1 /* LimitedDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LimitedDelegate.swift; sourceTree = "<group>"; };
+		9780C6B81EE9373C00924DD1 /* MatchManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchManager.swift; sourceTree = "<group>"; };
+		97EE49C41EEAA696009798F5 /* InputKit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputKit.swift; sourceTree = "<group>"; };
 		97F5EDBD1EE63D820083F0FB /* InputKitDemo_Swift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = InputKitDemo_Swift.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		97F5EDC01EE63D820083F0FB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		97F5EDC21EE63D820083F0FB /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -54,7 +59,6 @@
 		97F5EDE21EE63D830083F0FB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		97F5EDEF1EE6418A0083F0FB /* LimitedTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LimitedTextField.swift; sourceTree = "<group>"; };
 		97F5EDF11EE641B00083F0FB /* LimitedTextView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LimitedTextView.swift; sourceTree = "<group>"; };
-		97F5EDF31EE64BE60083F0FB /* Common.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Common.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -137,10 +141,12 @@
 		97F5EDEE1EE641120083F0FB /* InputKitSwift */ = {
 			isa = PBXGroup;
 			children = (
+				97EE49C41EEAA696009798F5 /* InputKit.swift */,
 				97F5EDEF1EE6418A0083F0FB /* LimitedTextField.swift */,
 				97F5EDF11EE641B00083F0FB /* LimitedTextView.swift */,
-				97F5EDF31EE64BE60083F0FB /* Common.swift */,
 				9780C6B61EE901CD00924DD1 /* LimitedDelegate.swift */,
+				9780C6B81EE9373C00924DD1 /* MatchManager.swift */,
+				976B4D501EE93C95004205A1 /* MatchConstant.swift */,
 			);
 			name = InputKitSwift;
 			path = ../../../InputKitSwift;
@@ -286,8 +292,10 @@
 				97F5EDF21EE641B00083F0FB /* LimitedTextView.swift in Sources */,
 				97F5EDC31EE63D820083F0FB /* ViewController.swift in Sources */,
 				97F5EDC11EE63D820083F0FB /* AppDelegate.swift in Sources */,
+				9780C6B91EE9373C00924DD1 /* MatchManager.swift in Sources */,
 				9780C6B71EE901CD00924DD1 /* LimitedDelegate.swift in Sources */,
-				97F5EDF41EE64BE60083F0FB /* Common.swift in Sources */,
+				976B4D511EE93C95004205A1 /* MatchConstant.swift in Sources */,
+				97EE49C51EEAA696009798F5 /* InputKit.swift in Sources */,
 				97F5EDF01EE6418A0083F0FB /* LimitedTextField.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
