@@ -59,7 +59,8 @@ open class LimitedTextField: UITextField {
     override init(frame: CGRect) {
         super.init(frame: frame)
         addNotifications()
-        if self.delegate == nil { addConfigs() }
+        addConfigs()
+        if self.delegate == nil { addDelegate() }
     }
     
     required public init?(coder aDecoder: NSCoder) {
@@ -69,7 +70,8 @@ open class LimitedTextField: UITextField {
     open override func awakeFromNib() {
         super.awakeFromNib()
         addNotifications()
-        if self.delegate == nil { addConfigs() }
+        addConfigs()
+        if self.delegate == nil { addDelegate() }
     }
     
     fileprivate var limitedDelegate: LimitedTextFieldDelegate?
@@ -98,8 +100,12 @@ extension LimitedTextField {
         //        self.addTarget(self, action: #selector(textFieldTextDidChange(textField:)), for: .editingChanged)
     }
     
-    private func addConfigs() {
+    private func addDelegate() {
         delegate = nil;
+    }
+    
+    private func addConfigs() {
+        autocorrectionType = .no;
     }
     
     private func clearCache() {

@@ -58,7 +58,8 @@ open class LimitedTextView: UITextView {
     public override init(frame: CGRect, textContainer: NSTextContainer?) {
         super.init(frame: frame, textContainer: textContainer)
         addNotifications()
-        if self.delegate == nil { addConfigs() }
+        addConfigs()
+        if self.delegate == nil { addDelegate() }
     }
     
     required public init?(coder aDecoder: NSCoder) {
@@ -68,7 +69,8 @@ open class LimitedTextView: UITextView {
     open override func awakeFromNib() {
         super.awakeFromNib()
         addNotifications()
-        if self.delegate == nil { addConfigs() }
+        addConfigs()
+        if self.delegate == nil { addDelegate() }
     }
     
     fileprivate var limitedDelegate: LimitedTextViewDelegate?
@@ -94,8 +96,12 @@ extension LimitedTextView {
         NotificationCenter.default.addObserver(self, selector: #selector(textViewTextDidChange(notification:)), name: Notification.Name.UITextViewTextDidChange, object: nil)
     }
     
-    private func addConfigs() {
+    private func addDelegate() {
         delegate = nil;
+    }
+    
+    private func addConfigs() {
+        autocorrectionType = .no;
     }
     
     private func clearCache() {
