@@ -45,6 +45,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
         textField.limitedRegEx = MatchConstant.Name.kLimitedTextChineseOnlyRegex
         textField.limitedNumber = 10
         textField.limitedType = .custom
+        textField.isTextSelecting = true;
         textField.placeholder = "Custom"
     }
     
