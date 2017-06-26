@@ -10,6 +10,6 @@
 #define InputKit_h
 #import "TXLimitedTextField.h"
 #import "TXLimitedTextView.h"
-
+#import "TXMatchConst.h"
 
 #endif /* InputKit_h */

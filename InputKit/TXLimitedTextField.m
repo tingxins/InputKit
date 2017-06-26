@@ -10,7 +10,6 @@
 #import "TXDynamicDelegate.h"
 #import "TXMatchManager.h"
 
-
 @interface TXLimitedTextField ()
 
 @property (copy, nonatomic) NSString *historyText;
@@ -34,20 +33,17 @@
 - (instancetype)initWithFrame:(CGRect)frame {
     if (self = [super initWithFrame:frame]) {
         [self addNotifications];
-        
         [self addConfigs];
+        if (!self.delegate) { [self addDelegate]; }
     }
     return self;
 }
 
 - (void)awakeFromNib {
     [super awakeFromNib];
-    
     [self addNotifications];
-    
-    if (!self.delegate) {
-        [self addConfigs];
-    }
+    [self addConfigs];
+    if (!self.delegate) { [self addDelegate]; }
 }
 
 #pragma mark - Configs Methods
@@ -56,13 +52,16 @@
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(textFieldTextDidChangeNotification:) name:UITextFieldTextDidChangeNotification object:self];
 }
 
-- (void)addConfigs {
+- (void)addDelegate {
     self.delegate = nil;
+}
+
+- (void)addConfigs {
+    self.autocorrectionType = UITextAutocorrectionTypeNo;
 }
 
 - (void)clearCache {
     _historyText = nil;
-    self.text = @"";
 }
 
 #pragma mark - Setter + Getter Methods

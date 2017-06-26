@@ -33,20 +33,17 @@
 - (instancetype)initWithFrame:(CGRect)frame {
     if (self = [super initWithFrame:frame]) {
         [self addNotifications];
-        
         [self addConfigs];
+        if (!self.delegate) { [self addDelegate]; }
     }
     return self;
 }
 
 - (void)awakeFromNib {
     [super awakeFromNib];
-    
     [self addNotifications];
-    
-    if (!self.delegate) {
-        [self addConfigs];
-    }
+    [self addConfigs];
+    if (!self.delegate) { [self addDelegate]; }
 }
 
 #pragma mark - Configs Methods
@@ -55,8 +52,12 @@
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(textViewTextDidChangeNotification:) name:UITextViewTextDidChangeNotification object:self];
 }
 
-- (void)addConfigs {
+- (void)addDelegate {
     self.delegate = nil;
+}
+
+- (void)addConfigs {
+    self.autocorrectionType = UITextAutocorrectionTypeNo;
 }
 
 - (void)clearCache {

@@ -4,7 +4,7 @@
 //
 //  Created by tingxins on 04/05/2017.
 //  Copyright © 2017 tingxins. All rights reserved.
-//
+//  Objective-C 版本 相比 Swift 版本，多一些消息转发的功能
 
 #import <UIKit/UIKit.h>
 
