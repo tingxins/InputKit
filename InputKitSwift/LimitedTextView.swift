@@ -11,6 +11,7 @@ import UIKit
 open class LimitedTextView: UITextView {
     
     //MARK: - Property defines
+    fileprivate var selectionRange: NSRange = NSMakeRange(0, 0)
     
     fileprivate var historyText: String?
     
@@ -121,11 +122,18 @@ extension LimitedTextView {
         let maxLength = self.limitedNumber
         
         var position: UITextPosition?
-        if let selectedRange = textView?.markedTextRange {
-            position = textView?.position(from: selectedRange.start, offset: 0)
+        if let markedTextRange = textView?.markedTextRange {
+            position = textView?.position(from: markedTextRange.start, offset: 0)
         }
         
-        let isMatch = MatchManager.matchLimitedTextTypeCustom(regExs: self.limitedRegExs, component: textView!, value: currentText!)
+        var isMatch = true
+        switch self.limitedType {
+        case .normal: break
+        case .price:
+            isMatch = MatchManager.matchLimitedTextTypePrice(component: textView!, value: currentText!)
+        case .custom:
+            isMatch = MatchManager.matchLimitedTextTypeCustom(regExs: self.limitedRegExs, component: textView!, value: currentText!)
+        }
         
         if isMatch {
             self.historyText = textView?.text
@@ -148,16 +156,32 @@ extension LimitedTextView {
                     textView?.text = ""
                 }
             }
+            let text: NSString = currentText! as NSString
+            if ((self.selectionRange.length > 0) && !isMatch && (self.selectionRange.length + self.selectionRange.location <= text.length)) {
+                let limitedText = text.substring(with: self.selectionRange)
+                textView?.text = (textView?.text as NSString!).replacingOccurrences(of: limitedText, with: "")
+                self.selectionRange = NSMakeRange(0, 0)
+            }
+            
             if flag {
                 // Send limits msg
                 sendIllegalMsgToObject();
             }
+        }else {
+            guard let markedTextRange = textView?.markedTextRange else { return }
+            self.selectionRange = range(from: markedTextRange)
         }
     }
 }
 
 extension LimitedTextView {
-    //    inputDelegate
+    
+    fileprivate func range(from textRange: UITextRange) -> NSRange {
+        let location = offset(from: beginningOfDocument, to: textRange.start)
+        let length = offset(from: textRange.start, to: textRange.end)
+        return NSMakeRange(location, length)
+    }
+    
     fileprivate func sendIllegalMsgToObject() {
         guard let delegate = self.limitedDelegate
             , let realDelegate = delegate.realDelegate else {
