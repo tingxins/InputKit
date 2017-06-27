@@ -5,10 +5,12 @@
 
 <p align="center">
 
+<a href="https://github.com/apple/swift"><img src="https://img.shields.io/badge/language-Objectivc--C-blue.svg"></a>
+<a href="https://github.com/apple/swift"><img src="https://img.shields.io/badge/language-swift-orange.svg"></a>
 <a href="https://github.com/Carthage/Carthage"><img src="https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat"></a>
 <a href="http://cocoadocs.org/docsets/InputKit"><img src="https://img.shields.io/cocoapods/v/InputKit.svg?style=flat"></a>
 <a href="https://github.com/tingxins/InputKit"><img src="https://img.shields.io/cocoapods/p/InputKit.svg?style=flat"></a>
-<a href="https://github.com/tingxins/InputKit"><img src="https://img.shields.io/badge/support-iOS%207%2B-brightgreen.svg"></a>
+<a href="https://github.com/tingxins/InputKit"><img src="https://img.shields.io/badge/support-iOS%208%2B-brightgreen.svg"></a>
 <a href="https://www.apache.org/licenses/LICENSE-2.0.html"><img src="http://img.shields.io/cocoapods/l/InputKit.svg?style=flat"></a>
 
 </p>
@@ -24,7 +26,7 @@ There are three ways to use InputKit in your project:
 
 * Manual
 
-* Using Carthage (not support now)
+* Using Carthage
 
 ## CocoaPods
     
@@ -32,7 +34,7 @@ CocoaPods is a dependency manager for Objective-C, which automates and simplifie
 
 **Podfile**
 
-    platform :ios, '7.0'
+    platform :ios, '8.0'
     pod 'InputKit'
 
 ## Manual
@@ -48,7 +50,7 @@ You can install Carthage with [Homebrew](http://brew.sh/) using the following co
     $ brew update
     $ brew install carthage
         
-To integrate **InputKit** or **InputKitSwift**(Will coming soon.) into your Xcode project using Carthage, specify it in your Cartfile:
+To integrate **InputKit** or **InputKitSwift** into your Xcode project using Carthage, specify it in your Cartfile:
 
     github "tingxins/InputKit"
 
