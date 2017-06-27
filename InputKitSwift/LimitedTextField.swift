@@ -94,22 +94,22 @@ open class LimitedTextField: UITextField {
 
 extension LimitedTextField {
     //MARK: - Config Methods
-    private func addNotifications() {
+    fileprivate func addNotifications() {
         print(#function, Notification.Name.UITextFieldTextDidChange)
         
         NotificationCenter.default.addObserver(self, selector: #selector(textFieldTextDidChange(notification:)), name: Notification.Name.UITextFieldTextDidChange, object: nil)
         //        self.addTarget(self, action: #selector(textFieldTextDidChange(textField:)), for: .editingChanged)
     }
     
-    private func addDelegate() {
+    fileprivate func addDelegate() {
         delegate = nil;
     }
     
-    private func addConfigs() {
+    fileprivate func addConfigs() {
         autocorrectionType = .no;
     }
     
-    private func clearCache() {
+    fileprivate func clearCache() {
         historyText = nil;
     }
 }
@@ -124,7 +124,7 @@ extension LimitedTextField {
 //    }
     
     //MARK: - Notifications
-    @objc private func textFieldTextDidChange(notification: Notification) {
+    @objc fileprivate func textFieldTextDidChange(notification: Notification) {
         let textField = notification.object as? UITextField
         if self != textField { return }
         

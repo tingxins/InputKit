@@ -93,19 +93,19 @@ open class LimitedTextView: UITextView {
 
 extension LimitedTextView {
     //MARK: - Config Methods
-    private func addNotifications() {
+    fileprivate func addNotifications() {
         NotificationCenter.default.addObserver(self, selector: #selector(textViewTextDidChange(notification:)), name: Notification.Name.UITextViewTextDidChange, object: nil)
     }
     
-    private func addDelegate() {
+    fileprivate func addDelegate() {
         delegate = nil;
     }
     
-    private func addConfigs() {
+    fileprivate func addConfigs() {
         autocorrectionType = .no;
     }
     
-    private func clearCache() {
+    fileprivate func clearCache() {
         historyText = nil;
     }
 }
@@ -114,7 +114,7 @@ extension LimitedTextView {
 extension LimitedTextView {
     
     //MARK: - Notifications
-    @objc private func textViewTextDidChange(notification: Notification) {
+    @objc fileprivate func textViewTextDidChange(notification: Notification) {
         let textView = notification.object as? UITextView
         if self != textView { return }
         
