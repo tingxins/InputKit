@@ -10,7 +10,9 @@
 #import "TXDynamicDelegate.h"
 #import "TXMatchManager.h"
 
-@interface TXLimitedTextField ()
+@interface TXLimitedTextField (){
+    NSRange _selectionRange;
+}
 
 @property (copy, nonatomic) NSString *historyText;
 
@@ -61,6 +63,7 @@
 }
 
 - (void)clearCache {
+    self.text = @"";
     _historyText = nil;
 }
 
@@ -97,7 +100,6 @@
 
 // 主要用于处理 高亮 文本
 - (void)textFieldTextDidChangeNotification:(NSNotification *)notification {
-    // || ((self.limitedType == TXLimitedTextFieldTypeCustom) && self.limitedRegExs.count)
     if (self != notification.object) return;
 
     UITextField *textField = notification.object;
@@ -105,10 +107,21 @@
     NSString *currentText = textField.text;
     NSInteger maxLength = self.limitedNumber;
     //获取高亮部分
-    UITextRange *selectedRange = [textField markedTextRange];
-    UITextPosition *position = [textField positionFromPosition:selectedRange.start offset:0];
-
-    BOOL isMatch = [TXMatchManager matchLimitedTextTypeCustomWithRegExs:self.limitedRegExs component:textField value:currentText];
+    UITextRange *markedTextRange = [textField markedTextRange];
+    UITextPosition *position = [textField positionFromPosition:markedTextRange.start offset:0];
+    
+    BOOL isMatch = YES;
+    switch (self.limitedType) {
+        case TXLimitedTextFieldTypeDefault:
+            break;
+        case TXLimitedTextFieldTypePrice:
+            isMatch = [TXMatchManager matchLimitedTextTypePriceWithComponent:textField value:currentText];
+            break;
+        case TXLimitedTextFieldTypeCustom:
+         isMatch = [TXMatchManager matchLimitedTextTypeCustomWithRegExs:self.limitedRegExs component:textField value:currentText];
+            break;
+        default:break;
+    }
     
     if (isMatch) {
         self.historyText = textField.text;
@@ -132,9 +145,22 @@
                 }
             }
         }
+        if (_selectionRange.length && !isMatch && (_selectionRange.length + _selectionRange.location <= currentText.length)) {
+            NSString *limitedText = [currentText substringWithRange:_selectionRange];
+            textField.text = [textField.text stringByReplacingOccurrencesOfString:limitedText withString:@"" options:0 range:_selectionRange];
+            _selectionRange = NSMakeRange(0, 0);
+        }
         if (flag)
             [self sendIllegalMsgToObject];
+    }else {
+        _selectionRange = [self rangeFromTextRange:textField.markedTextRange];
     }
+}
+
+- (NSRange)rangeFromTextRange:(UITextRange *)textRange {
+    NSInteger location = [self offsetFromPosition:self.beginningOfDocument toPosition:textRange.start];
+    NSInteger length = [self offsetFromPosition:textRange.start toPosition:textRange.end];
+    return NSMakeRange(location, length);
 }
 
 - (void)sendIllegalMsgToObject {
@@ -165,7 +191,7 @@
     return flag;
 }
 
-//// became first responder
+// became first responder
 - (void)textFieldDidBeginEditing:(UITextField *)textField {
     id realDelegate = self.realDelegate;
     if (realDelegate && [realDelegate respondsToSelector:@selector(textFieldDidBeginEditing:)])
@@ -197,7 +223,6 @@
 
 // return NO to not change text
 - (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string {
-    
     BOOL flag = YES;
     id realDelegate = self.realDelegate;
     if (realDelegate && [realDelegate respondsToSelector:@selector(textField:shouldChangeCharactersInRange:replacementString:)])
@@ -291,4 +316,5 @@ static void (*tx_trigger1)(id, SEL, UITextField *);
         }
     }
 }
+
 @end

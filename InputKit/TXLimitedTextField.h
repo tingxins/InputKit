@@ -14,6 +14,14 @@ typedef NS_ENUM (NSInteger, TXLimitedTextFieldType) {
     TXLimitedTextFieldTypeCustom
 };
 
+typedef NS_ENUM(NSInteger, TXInputKitTextOperationType) {
+    TXInputKitTextOperationTypeNormal, // 正常输入
+    TXInputKitTextOperationTypeDelete, // 删除
+    TXInputKitTextOperationTypePaste,   // 粘贴
+    TXInputKitTextOperationTypeInsert,  // 插入
+    TXInputKitTextOperationTypeAutoCorrection //提示
+};
+
 @interface TXLimitedTextField : UITextField
 
 #if TARGET_INTERFACE_BUILDER
