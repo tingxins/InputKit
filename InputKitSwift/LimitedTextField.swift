@@ -11,6 +11,7 @@ import UIKit
 open class LimitedTextField: UITextField {
     
     //MARK: - Property defines
+    fileprivate var selectionRange: NSRange = NSMakeRange(0, 0)
     
     fileprivate var historyText: String?
     
@@ -131,11 +132,18 @@ extension LimitedTextField {
         let maxLength = self.limitedNumber
         
         var position: UITextPosition?
-        if let selectedRange = textField?.markedTextRange {
-            position = textField?.position(from: selectedRange.start, offset: 0)
+        if let markedTextRange = textField?.markedTextRange {
+            position = textField?.position(from: markedTextRange.start, offset: 0)
         }
         
-        let isMatch = MatchManager.matchLimitedTextTypeCustom(regExs: self.limitedRegExs, component: textField!, value: currentText!)
+        var isMatch = true
+        switch self.limitedType {
+        case .normal: break
+        case .price:
+            isMatch = MatchManager.matchLimitedTextTypePrice(component: textField!, value: currentText!)
+        case .custom:
+            isMatch = MatchManager.matchLimitedTextTypeCustom(regExs: self.limitedRegExs, component: textField!, value: currentText!)
+        }
         
         if isMatch {
             self.historyText = textField?.text
@@ -158,16 +166,33 @@ extension LimitedTextField {
                     textField?.text = ""
                 }
             }
+            
+            let text: NSString = currentText! as NSString
+            if ((self.selectionRange.length > 0) && !isMatch && (self.selectionRange.length + self.selectionRange.location <= text.length)) {
+                let limitedText = text.substring(with: self.selectionRange)
+                textField?.text = (textField?.text as NSString!).replacingOccurrences(of: limitedText, with: "")
+                self.selectionRange = NSMakeRange(0, 0)
+            }
+            
             if flag {
                 // Send limits msg
                 sendIllegalMsgToObject();
             }
+        }else {
+            guard let markedTextRange = textField?.markedTextRange else { return }
+            self.selectionRange = range(from: markedTextRange)
         }
     }
 }
 
 extension LimitedTextField {
-//    inputDelegate
+    
+    fileprivate func range(from textRange: UITextRange) -> NSRange {
+        let location = offset(from: beginningOfDocument, to: textRange.start)
+        let length = offset(from: textRange.start, to: textRange.end)
+        return NSMakeRange(location, length)
+    }
+    
     fileprivate func sendIllegalMsgToObject() {
         guard let delegate = self.limitedDelegate
             , let realDelegate = delegate.realDelegate else {
