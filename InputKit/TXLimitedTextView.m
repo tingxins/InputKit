@@ -10,7 +10,9 @@
 #import "TXDynamicDelegate.h"
 #import "TXMatchManager.h"
 
-@interface TXLimitedTextView ()<UITextViewDelegate>
+@interface TXLimitedTextView (){
+    NSRange _selectionRange;
+}
 
 @property (copy, nonatomic) NSString *historyText;
 
@@ -61,6 +63,7 @@
 }
 
 - (void)clearCache {
+    self.text = @"";
     _historyText = nil;
 }
 
@@ -98,25 +101,36 @@
 - (void)textViewTextDidChangeNotification:(NSNotification *)notification {
     if (self != notification.object) return;
     
-    UITextView *textComponent = notification.object;
+    UITextView *textView = notification.object;
     
-    NSString *currentText = textComponent.text;
+    NSString *currentText = textView.text;
     NSInteger maxLength = self.limitedNumber;
     
     //获取高亮部分
-    UITextRange *selectedRange = [textComponent markedTextRange];
-    UITextPosition *position = [textComponent positionFromPosition:selectedRange.start offset:0];
+    UITextRange *markedTextRange = [textView markedTextRange];
+    UITextPosition *position = [textView positionFromPosition:markedTextRange.start offset:0];
     
-    BOOL isMatch = [TXMatchManager matchLimitedTextTypeCustomWithRegExs:self.limitedRegExs component:textComponent value:currentText];
+    BOOL isMatch = YES;
+    switch (self.limitedType) {
+        case TXLimitedTextViewTypeDefault:
+            break;
+        case TXLimitedTextViewTypePrice:
+            isMatch = [TXMatchManager matchLimitedTextTypePriceWithComponent:textView value:currentText];
+            break;
+        case TXLimitedTextViewTypeCustom:
+            isMatch = [TXMatchManager matchLimitedTextTypeCustomWithRegExs:self.limitedRegExs component:textView value:currentText];
+            break;
+        default:break;
+    }
     
     if (isMatch) {
-        self.historyText = textComponent.text;
+        self.historyText = textView.text;
     }
     // 没有高亮选择的字，则对已输入的字符进行数量统计和限制
     if (!position) {
         BOOL flag = NO;
         if (currentText.length > maxLength) {
-            textComponent.text = [currentText substringToIndex:maxLength];
+            textView.text = [currentText substringToIndex:maxLength];
             flag = YES;
         }
         
@@ -124,16 +138,29 @@
             flag = YES;
             NSString *historyText = self.historyText;
             if (!historyText.length) {
-                textComponent.text = @"";
+                textView.text = @"";
             }else {
-                if (self.historyText.length <= textComponent.text.length) {
-                    textComponent.text = self.historyText;
+                if (self.historyText.length <= textView.text.length) {
+                    textView.text = self.historyText;
                 }
             }
         }
+        if (_selectionRange.length && !isMatch && (_selectionRange.length + _selectionRange.location <= currentText.length)) {
+            NSString *limitedText = [currentText substringWithRange:_selectionRange];
+            textView.text = [textView.text stringByReplacingOccurrencesOfString:limitedText withString:@"" options:0 range:_selectionRange];
+            _selectionRange = NSMakeRange(0, 0);
+        }
         if (flag)
             [self sendIllegalMsgToObject];
+    }else {
+        _selectionRange = [self rangeFromTextRange:textView.markedTextRange];
     }
+}
+
+- (NSRange)rangeFromTextRange:(UITextRange *)textRange {
+    NSInteger location = [self offsetFromPosition:self.beginningOfDocument toPosition:textRange.start];
+    NSInteger length = [self offsetFromPosition:textRange.start toPosition:textRange.end];
+    return NSMakeRange(location, length);
 }
 
 - (void)sendIllegalMsgToObject {
