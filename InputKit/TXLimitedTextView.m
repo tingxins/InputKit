@@ -147,7 +147,7 @@
         }
         if (_selectionRange.length && !isMatch && (_selectionRange.length + _selectionRange.location <= currentText.length)) {
             NSString *limitedText = [currentText substringWithRange:_selectionRange];
-            textView.text = [textView.text stringByReplacingOccurrencesOfString:limitedText withString:@"" options:0 range:_selectionRange];
+            textView.text = [textView.text stringByReplacingOccurrencesOfString:limitedText withString:@""];
             _selectionRange = NSMakeRange(0, 0);
         }
         if (flag)
