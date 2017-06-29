@@ -1,12 +1,11 @@
 <p align="center">
-<img src="http://image.tingxins.cn/InputKit/InputKit-logo.png" width=888/>
+<img src="http://image.tingxins.cn/InputKit/InputKit-logo2.png" width=888/>
 </p>
-
 
 <p align="center">
 
 <a href="https://github.com/apple/swift"><img src="https://img.shields.io/badge/language-Objectivc--C-blue.svg"></a>
-<a href="https://github.com/apple/swift"><img src="https://img.shields.io/badge/language-swift-orange.svg"></a>
+<a href="https://github.com/apple/swift"><img src="https://img.shields.io/badge/language-Swift-orange.svg"></a>
 <a href="https://github.com/Carthage/Carthage"><img src="https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat"></a>
 <a href="http://cocoadocs.org/docsets/InputKit"><img src="https://img.shields.io/cocoapods/v/InputKit.svg?style=flat"></a>
 <a href="https://github.com/tingxins/InputKit"><img src="https://img.shields.io/cocoapods/p/InputKit.svg?style=flat"></a>
