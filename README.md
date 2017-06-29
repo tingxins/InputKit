@@ -101,7 +101,7 @@ Example:
 
 TXLimitedTextField *textField = [[TXLimitedTextField alloc] initWithFrame:CGRectMake(20, 200, 100, 30)];
 
-// Of course, you can ignored this line of codes. TXLimitedTextFieldTypeDefault is default.
+// Type
 textField.limitedType = TXLimitedTextFieldTypePrice;
 
 // you can also set the property in this type. It limits the max number of characters that you input
@@ -129,8 +129,8 @@ Example:
 
 TXLimitedTextField *textField = [[TXLimitedTextField alloc] initWithFrame:CGRectMake(20, 200, 100, 30)];
 
-// Of course, you can ignored this line of codes. TXLimitedTextFieldTypeDefault is default.
-textField.limitedType = TXLimitedTextFieldTypePrice;
+// Of course, you can custom your field
+textField.limitedType = TXLimitedTextFieldTypeCustom;
 
 // you can also set the property in this type. It limits the max number of characters that you input
 textField.limitedNumber = 10;
