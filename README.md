@@ -1,5 +1,5 @@
 <p align="center">
-<img src="http://image.tingxins.cn/InputKit/InputKit-logo2.png" width=888/>
+<img src="http://image.tingxins.cn/InputKit/InputKit-logo2-dynamic.gif" width=888/>
 </p>
 
 <p align="center">
