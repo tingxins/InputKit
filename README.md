@@ -154,7 +154,7 @@ InputKit accessible from the **Attributes Inspector**. These attributes have bee
 
 If you want to get a callback when you are input limited text, you should have to do this:
 
-1. set the delegate of your TXLimitedTextField: 
+1. Set the delegate of your TXLimitedTextField: 
 
     ```
     
@@ -162,7 +162,7 @@ If you want to get a callback when you are input limited text, you should have t
     
     ```
     
-2. implement -inputKitDidLimitedIllegalInputText: method:
+2. Implement -inputKitDidLimitedIllegalInputText: method:
 
     ```
     #pragma mark - InputKit 
@@ -177,7 +177,7 @@ If you want to get a callback when you are input limited text, you should have t
 
 Absolutely，you can contribute to this project all the time if you want to.
 
-- If you **need help or ask general question**, just [**@tingxins**](http://weibo.com/tingxins) in `Weibo` or `Twitter`, ofcourse, you can access to my [**Blog**](https://tingxins.com).
+- If you **need help or ask general question**, just [**@tingxins**](http://weibo.com/tingxins) in [Weibo](http://weibo.com/tingxins) or [Twitter](https://twitter.com/tingxins), ofcourse, you can access to my [**blog**](https://tingxins.com).
 
 - If you **found a bug**, just open an issue.
 
