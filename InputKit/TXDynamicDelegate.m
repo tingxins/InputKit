@@ -207,9 +207,6 @@ static bool swizzleMethods(Class cls, SEL oldSel, SEL neSel, IMP neIMP, char con
         
         TXDynamicDelegate *dynamicDelegate = getDynamicDelegate(delegatingObject, dynamicDelegateInfos, kTXOperationDelegateKey);
         
-        // 防止死循环
-        if ([delegate isEqual:dynamicDelegate.realDelegate]) { delegate = nil; }
-        
         if (delegatingObject == delegate) {
             // 标记存在无限转发可能
             dynamicDelegate.isWillBeForwardingLoop = YES;
