@@ -172,6 +172,34 @@ If you want to get a callback when you are input limited text, you should have t
     
     ```
     
+    
+## Other
+    
+#### Compatible with ReactiveCocoa
+
+If you are using `ReactiveCocoa` in your Projects, please do make sure to set  instance property of `compatibleWithRAC` = YES.(**default is NO**). Thanks for @**devcxm** open this issue in GitHub.
+
+Sample Code:
+
+```
+
+TXLimitedTextView *limitedTextView = [[TXLimitedTextView alloc] initWithFrame:CGRectMake(20.f, 100.f, 120.f, 30.f)];
+// If you are using `ReactiveCocoa` somewhere in your Projects, please make sure this property = YES
+limitedTextView.compatibleWithRAC = YES;
+limitedTextView.delegate = self;
+limitedTextView.limitedNumber = 5;
+[self.view addSubview:limitedTextView];
+
+[limitedTextView.rac_textSignal subscribeNext:^(NSString * _Nullable x) {
+  NSLog(@"come here ... %@", x);
+}];
+
+//....Enjoy it!👀
+
+```
+
+
+    
 # Communication
 
 Absolutely，you can contribute to this project all the time if you want to.
