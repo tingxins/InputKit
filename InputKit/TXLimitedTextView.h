@@ -45,4 +45,12 @@ typedef NS_ENUM (NSInteger, TXLimitedTextViewType) {
  */
 @property (assign, nonatomic) IBInspectable BOOL isTextSelecting;
 
+/** 特殊处理 RAC，RAC 中截断信号进行消息转发导致循环
+ 如果你的项目中用到了 RAC，务必设置此属性等于YES。（默认为NO）
+ 
+ If you are using ReactiveCocoa in your Projects, please do make sure set this Property = YES. Default is NO.
+ Thanks for @devcxm open this issue in GitHub.
+ */
+@property (assign, nonatomic, getter=isCompatibleWithRAC) BOOL compatibleWithRAC;
+
 @end

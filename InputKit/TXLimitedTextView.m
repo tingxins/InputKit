@@ -185,14 +185,16 @@
 - (BOOL)textView:(UITextView *)textView shouldChangeTextInRange:(NSRange)range replacementText:(NSString *)text {
     
     BOOL flag = YES;
-    id realDelegate = self.realDelegate;
-    if (realDelegate && [realDelegate respondsToSelector:@selector(textView:shouldChangeTextInRange:replacementText:)])
-        flag = [realDelegate textView:textView shouldChangeTextInRange:range replacementText:text];
-    
     int matchResult = YES;
     
     if ([textView isKindOfClass:[TXLimitedTextView class]]) {
         TXLimitedTextView *limitedTextView = (TXLimitedTextView *)textView;
+        
+        id realDelegate = self.realDelegate;
+        if (realDelegate &&
+            [realDelegate respondsToSelector:@selector(textView:shouldChangeTextInRange:replacementText:)] &&
+            !limitedTextView.isCompatibleWithRAC)
+            flag = [realDelegate textView:textView shouldChangeTextInRange:range replacementText:text];
         
         NSMutableString *matchStr = [NSMutableString stringWithString:textView.text];
         [matchStr insertString:text atIndex:range.location];
@@ -239,7 +241,10 @@
 - (BOOL)textViewShouldBeginEditing:(UITextView *)textView {
     BOOL flag = YES;
     id realDelegate = self.realDelegate;
-    if (realDelegate && [realDelegate respondsToSelector:@selector(textViewShouldBeginEditing:)])
+    TXLimitedTextView *limitedTextView = (TXLimitedTextView *)textView;
+    if (realDelegate &&
+        [realDelegate respondsToSelector:@selector(textViewShouldBeginEditing:)] &&
+        !limitedTextView.isCompatibleWithRAC)
         flag = [realDelegate textViewShouldBeginEditing:textView];
     return flag;
 }
@@ -247,23 +252,33 @@
 - (BOOL)textViewShouldEndEditing:(UITextView *)textView {
     BOOL flag = YES;
     id realDelegate = self.realDelegate;
-    if (realDelegate && [realDelegate respondsToSelector:@selector(textViewShouldEndEditing:)])
+    TXLimitedTextView *limitedTextView = (TXLimitedTextView *)textView;
+    if (realDelegate &&
+        [realDelegate respondsToSelector:@selector(textViewShouldEndEditing:)] &&
+        !limitedTextView.isCompatibleWithRAC)
         flag = [realDelegate textViewShouldEndEditing:textView];
     return flag;
 }
 
 - (void)textViewDidBeginEditing:(UITextView *)textView {
     id realDelegate = self.realDelegate;
-    if (realDelegate && [realDelegate respondsToSelector:@selector(textViewDidBeginEditing:)])
+    TXLimitedTextView *limitedTextView = (TXLimitedTextView *)textView;
+    if (realDelegate &&
+        [realDelegate respondsToSelector:@selector(textViewDidBeginEditing:)] &&
+        !limitedTextView.isCompatibleWithRAC)
         [realDelegate textViewDidBeginEditing:textView];
 }
 
 - (void)textViewDidEndEditing:(UITextView *)textView {
     id realDelegate = self.realDelegate;
-    if (realDelegate && [realDelegate respondsToSelector:@selector(textViewDidEndEditing:)])
+    TXLimitedTextView *limitedTextView = (TXLimitedTextView *)textView;
+    if (realDelegate &&
+        [realDelegate respondsToSelector:@selector(textViewDidEndEditing:)] &&
+        !limitedTextView.isCompatibleWithRAC)
         [realDelegate textViewDidEndEditing:textView];
 }
 
+/** none of -textViewDidEndEditing: business in RAC */
 - (void)textViewDidChange:(UITextView *)textView {
     id realDelegate = self.realDelegate;
     if (realDelegate && [realDelegate respondsToSelector:@selector(textViewDidChange:)])
@@ -272,14 +287,20 @@
 
 - (void)textViewDidChangeSelection:(UITextView *)textView {
     id realDelegate = self.realDelegate;
-    if (realDelegate && [realDelegate respondsToSelector:@selector(textViewDidChangeSelection:)])
+    TXLimitedTextView *limitedTextView = (TXLimitedTextView *)textView;
+    if (realDelegate &&
+        [realDelegate respondsToSelector:@selector(textViewDidChangeSelection:)] &&
+        !limitedTextView.isCompatibleWithRAC)
         [realDelegate textViewDidChangeSelection:textView];
 }
 
 - (BOOL)textView:(UITextView *)textView shouldInteractWithURL:(NSURL *)URL inRange:(NSRange)characterRange interaction:(UITextItemInteraction)interaction {
     BOOL flag = YES;
     id realDelegate = self.realDelegate;
-    if (realDelegate && [realDelegate respondsToSelector:@selector(textView:shouldInteractWithURL:inRange:interaction:)])
+    TXLimitedTextView *limitedTextView = (TXLimitedTextView *)textView;
+    if (realDelegate &&
+        [realDelegate respondsToSelector:@selector(textView:shouldInteractWithURL:inRange:interaction:)]&&
+        !limitedTextView.isCompatibleWithRAC)
         flag = [realDelegate textView:textView shouldInteractWithURL:URL inRange:characterRange interaction:interaction];
     return flag;
 }
@@ -287,7 +308,10 @@
 - (BOOL)textView:(UITextView *)textView shouldInteractWithTextAttachment:(NSTextAttachment *)textAttachment inRange:(NSRange)characterRange interaction:(UITextItemInteraction)interaction {
     BOOL flag = YES;
     id realDelegate = self.realDelegate;
-    if (realDelegate && [realDelegate respondsToSelector:@selector(textView:shouldInteractWithTextAttachment:inRange:interaction:)])
+    TXLimitedTextView *limitedTextView = (TXLimitedTextView *)textView;
+    if (realDelegate &&
+        [realDelegate respondsToSelector:@selector(textView:shouldInteractWithTextAttachment:inRange:interaction:)]&&
+        !limitedTextView.isCompatibleWithRAC)
         flag = [realDelegate textView:textView shouldInteractWithTextAttachment:textAttachment inRange:characterRange interaction:interaction];
     return flag;
 }
