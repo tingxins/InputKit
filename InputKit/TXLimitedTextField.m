@@ -212,13 +212,20 @@
     id realDelegate = self.realDelegate;
     if (realDelegate && [realDelegate respondsToSelector:@selector(textFieldDidEndEditing:)])
         [realDelegate textFieldDidEndEditing:textField];
+    
+    // Coding...TODO
 }
 
 // if implemented, called in place of textFieldDidEndEditing:
 - (void)textFieldDidEndEditing:(UITextField *)textField reason:(UITextFieldDidEndEditingReason)reason NS_AVAILABLE_IOS(10_0) {
     id realDelegate = self.realDelegate;
-    if (realDelegate && [realDelegate respondsToSelector:@selector(textFieldDidEndEditing:reason:)])
+    if (realDelegate && [realDelegate respondsToSelector:@selector(textFieldDidEndEditing:reason:)]) {
         [realDelegate textFieldDidEndEditing:textField reason:reason];
+    }else if ([self respondsToSelector:@selector(textFieldDidEndEditing:)]) {
+        [self textFieldDidEndEditing:textField];
+    }
+    
+    // Coding...TODO
 }
 
 // return NO to not change text
