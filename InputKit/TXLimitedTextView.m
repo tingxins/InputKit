@@ -176,7 +176,7 @@
 
 @end
 
-@interface TXDynamicTXLimitedTextViewDelegate: TXDynamicDelegate<UITextViewDelegate>
+@interface TXDynamicTXLimitedTextViewDelegate: TXDynamicDelegate
 
 @end
 
