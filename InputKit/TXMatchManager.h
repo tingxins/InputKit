@@ -33,4 +33,8 @@
 + (BOOL)matchLimitedTextTypeCustomWithRegExs:(NSArray *)regExs
                                    component:(id)component
                                        value:(NSString *)matchStr;
+
++ (NSString *)getMatchContentWithOriginalText:(NSString *)originalText
+                            replaceText:(NSString *)replaceText
+                                  range:(NSRange)range;
 @end

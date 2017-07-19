@@ -239,8 +239,7 @@
     if ([textField isKindOfClass:[TXLimitedTextField class]]) {
         TXLimitedTextField *limitedTextField = (TXLimitedTextField *)textField;
         
-        NSMutableString *matchStr = [NSMutableString stringWithString:textField.text];
-        [matchStr insertString:string atIndex:range.location];
+        NSString *matchStr = [TXMatchManager getMatchContentWithOriginalText:textField.text replaceText:string range:range];
         
         BOOL isDeleteOperation = (range.length > 0 && string.length == 0) ? YES : NO;        
         switch (limitedTextField.limitedType) {

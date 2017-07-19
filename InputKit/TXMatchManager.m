@@ -46,4 +46,24 @@
     return results;
 }
 
++ (NSString *)getMatchContentWithOriginalText:(NSString *)originalText
+                                  replaceText:(NSString *)replaceText
+                                        range:(NSRange)range {
+    NSMutableString *matchContent = [NSMutableString string];
+    // 原始内容判空
+    if (originalText.length) {
+        NSMutableString *tempStr = [NSMutableString stringWithString:originalText];
+        matchContent = tempStr;
+    }
+    // 新增内容越界处理
+    if (replaceText.length) {
+        if (range.location < matchContent.length) {
+            [matchContent insertString:replaceText atIndex:range.location];
+        }else {
+            [matchContent appendString:replaceText];
+        }
+    }
+    return matchContent;
+}
+
 @end

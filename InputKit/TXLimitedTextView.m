@@ -196,8 +196,7 @@
             !limitedTextView.isCompatibleWithRAC)
             flag = [realDelegate textView:textView shouldChangeTextInRange:range replacementText:text];
         
-        NSMutableString *matchStr = [NSMutableString stringWithString:textView.text];
-        [matchStr insertString:text atIndex:range.location];
+        NSString *matchStr = [TXMatchManager getMatchContentWithOriginalText:textView.text replaceText:text range:range];
         
         BOOL isDeleteOperation = (range.length > 0 && text.length == 0) ? YES : NO;
         switch (limitedTextView.limitedType) {
