@@ -57,7 +57,7 @@ open class LimitedTextField: UITextField {
     }
     
     //MARK: - initial Methods
-    override init(frame: CGRect) {
+    public override init(frame: CGRect) {
         super.init(frame: frame)
         addNotifications()
         addConfigs()
