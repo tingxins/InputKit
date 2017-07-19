@@ -240,9 +240,10 @@ fileprivate class LimitedTextFieldDelegate: LimitedDelegate, UITextFieldDelegate
     func textFieldDidEndEditing(_ textField: UITextField, reason: UITextFieldDidEndEditingReason) {
         if let realDelegate = self.realDelegate, realDelegate.responds(to: #selector(textFieldDidEndEditing(_:reason:))) {
             realDelegate.textFieldDidEndEditing(textField, reason: reason)
+        }else if let realDelegate = self.realDelegate, realDelegate.responds(to: #selector(textFieldDidEndEditing(_:))) {
+            self.textFieldDidEndEditing(textField)
         }
     } // if implemented, called in place of textFieldDidEndEditing:
-    
     
     @available(iOS 2.0, *)
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
