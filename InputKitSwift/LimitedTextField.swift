@@ -257,9 +257,8 @@ fileprivate class LimitedTextFieldDelegate: LimitedDelegate, UITextFieldDelegate
         var matchResult = true
         if textField.isKind(of: LimitedTextField.self) {
             let limitedTextField = textField as! LimitedTextField
-            var matchStr = textField.text
-            let index = matchStr?.index((matchStr?.startIndex)!, offsetBy: range.location)
-            matchStr?.insert(contentsOf: string, at: index!)
+            
+            let matchStr = MatchManager.getMatchContentWithOriginalText(originalText: textField.text!, replaceText: string, range: range)
             
             let isDeleteOperation = (range.length > 0 && string.characters.count == 0) ? true : false;
             
@@ -267,12 +266,12 @@ fileprivate class LimitedTextFieldDelegate: LimitedDelegate, UITextFieldDelegate
             case .normal:
                 break
             case .price:
-                matchResult = MatchManager.matchLimitedTextTypePrice(component: textField, value: matchStr!)
+                matchResult = MatchManager.matchLimitedTextTypePrice(component: textField, value: matchStr)
             case .custom:
                 if limitedTextField.isTextSelecting {
                     matchResult = true
                 }else {
-                    matchResult = MatchManager.matchLimitedTextTypeCustom(regExs: limitedTextField.limitedRegExs, component: textField, value: matchStr!)
+                    matchResult = MatchManager.matchLimitedTextTypeCustom(regExs: limitedTextField.limitedRegExs, component: textField, value: matchStr)
                 }
             }
             let result = flag && (matchResult || isDeleteOperation);

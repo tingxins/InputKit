@@ -236,20 +236,19 @@ fileprivate class LimitedTextViewDelegate: LimitedDelegate, UITextViewDelegate  
         var matchResult = true
         if textView.isKind(of: LimitedTextView.self) {
             let limitedTextView = textView as! LimitedTextView
-            var matchStr = textView.text
-            let index = matchStr?.index((matchStr?.startIndex)!, offsetBy: range.location)
-            matchStr?.insert(contentsOf: text, at: index!)
+            
+            let matchStr = MatchManager.getMatchContentWithOriginalText(originalText: textView.text!, replaceText: text, range: range)
             
             let isDeleteOperation = (range.length > 0 && text.characters.count == 0) ? true : false;
             
             switch limitedTextView.limitedType {
             case .normal: break
-            case .price: matchResult = MatchManager.matchLimitedTextTypePrice(component: textView, value: matchStr!)
+            case .price: matchResult = MatchManager.matchLimitedTextTypePrice(component: textView, value: matchStr)
             case .custom:
                 if limitedTextView.isTextSelecting {
                     matchResult = true
                 }else {
-                    matchResult = MatchManager.matchLimitedTextTypeCustom(regExs: limitedTextView.limitedRegExs, component: textView, value: matchStr!)
+                    matchResult = MatchManager.matchLimitedTextTypeCustom(regExs: limitedTextView.limitedRegExs, component: textView, value: matchStr)
                 }
             }
             let result = flag && (matchResult || isDeleteOperation);
