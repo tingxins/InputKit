@@ -81,8 +81,12 @@ open class LimitedTextField: UITextField {
             return limitedDelegate
         }
         set {
-            limitedDelegate = LimitedTextFieldDelegate(realDelegate: newValue)
-            super.delegate = self.limitedDelegate
+            if let value = newValue {
+                limitedDelegate = LimitedTextFieldDelegate(realDelegate: value)
+            }else {
+                limitedDelegate = nil
+            }
+            super.delegate = limitedDelegate
         }
     }
     
