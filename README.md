@@ -7,7 +7,7 @@
 <a href="https://github.com/apple/swift"><img src="https://img.shields.io/badge/language-Objectivc--C-blue.svg"></a>
 <a href="http://cocoadocs.org/docsets/InputKit"><img src="https://img.shields.io/cocoapods/v/InputKit.svg?style=social"></a>
 <a href="https://github.com/apple/swift"><img src="https://img.shields.io/badge/language-Swift-orange.svg"></a>
-<a href="http://cocoadocs.org/docsets/InputKit"><img src="https://img.shields.io/cocoapods/v/InputKitSwift.svg?style=social"></a>
+<a href="http://cocoadocs.org/docsets/InputKitSwift"><img src="https://img.shields.io/cocoapods/v/InputKitSwift.svg?style=social"></a>
 <a href="https://github.com/Carthage/Carthage"><img src="https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat"></a>
 <a href="https://github.com/tingxins/InputKit"><img src="https://img.shields.io/cocoapods/p/InputKit.svg?style=flat"></a>
 <a href="https://github.com/tingxins/InputKit"><img src="https://img.shields.io/badge/support-iOS%208%2B-brightgreen.svg"></a>
