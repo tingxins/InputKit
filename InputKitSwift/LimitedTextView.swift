@@ -35,7 +35,7 @@ open class LimitedTextView: UITextView {
     
     @IBInspectable open var limitedRegEx: String? {
         didSet {
-            if let regEx = limitedRegEx, regEx.count > 0 {
+            if let regEx = limitedRegEx, regEx.characters.count > 0 {
                 limitedRegExs = [regEx]
             }
         }
@@ -47,7 +47,7 @@ open class LimitedTextView: UITextView {
             var realRegExs: [String] = []
             limitedRegExs?.forEach({ (regEx) in
                 realRegEx = regEx.replacingOccurrences(of: "\\\\", with: "\\")
-                if realRegEx.count != 0 {
+                if realRegEx.characters.count != 0 {
                     realRegExs.append(realRegEx)
                 }
             })
@@ -145,8 +145,9 @@ extension LimitedTextView {
         
         if position == nil {
             var flag = false
-            if let count = currentText?.count, count > maxLength {
-                textView?.text = String(currentText!.dropLast(count - maxLength))
+            if let count = currentText?.characters.count, count > maxLength {
+                let toIndex = currentText!.index(currentText!.endIndex, offsetBy: maxLength - count)
+                textView?.text = currentText!.substring(to: toIndex)
                 flag = true
             }
             
@@ -154,7 +155,7 @@ extension LimitedTextView {
                 flag = true
                 if let hisText = self.historyText,
                     let curText = textView?.text,
-                    hisText.count <= curText.count {
+                    hisText.characters.count <= curText.characters.count {
                     textView?.text = hisText
                 }else {
                     textView?.text = ""

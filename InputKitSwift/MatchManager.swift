@@ -51,7 +51,7 @@ internal extension MatchManager {
         if replaceText.characters.count > 0 {
             if range.location < matchContent.characters.count {
                 let index = matchContent.index(matchContent.startIndex, offsetBy: range.location)
-                matchContent.insert(contentsOf: replaceText, at: index)
+                matchContent.insert(contentsOf: replaceText.characters, at: index)
             }else {
                 matchContent.append(replaceText)
             }
