@@ -11,9 +11,9 @@ import UIKit
 open class LimitedTextView: UITextView {
     
     //MARK: - Property defines
-    fileprivate var selectionRange: NSRange = NSMakeRange(0, 0)
+    private var selectionRange: NSRange = NSMakeRange(0, 0)
     
-    fileprivate var historyText: String?
+    private var historyText: String?
     
     open var limitedType: LimitedType = .normal
     @IBInspectable var _limitedType: Int {
@@ -74,7 +74,7 @@ open class LimitedTextView: UITextView {
         if self.delegate == nil { addDelegate() }
     }
     
-    fileprivate var limitedDelegate: LimitedTextViewDelegate?
+    private var limitedDelegate: LimitedTextViewDelegate?
     override open var delegate: UITextViewDelegate? {
         get {
             return limitedDelegate
@@ -97,19 +97,19 @@ open class LimitedTextView: UITextView {
 
 extension LimitedTextView {
     //MARK: - Config Methods
-    fileprivate func addNotifications() {
+    private func addNotifications() {
         NotificationCenter.default.addObserver(self, selector: #selector(textViewTextDidChange(notification:)), name: Notification.Name.UITextViewTextDidChange, object: nil)
     }
     
-    fileprivate func addDelegate() {
+    private func addDelegate() {
         delegate = nil;
     }
     
-    fileprivate func addConfigs() {
+    private func addConfigs() {
         autocorrectionType = .no;
     }
     
-    fileprivate func clearCache() {
+    private func clearCache() {
         historyText = nil;
     }
 }
@@ -118,7 +118,7 @@ extension LimitedTextView {
 extension LimitedTextView {
     
     //MARK: - Notifications
-    @objc fileprivate func textViewTextDidChange(notification: Notification) {
+    @objc private func textViewTextDidChange(notification: Notification) {
         let textView = notification.object as? UITextView
         if self != textView { return }
         

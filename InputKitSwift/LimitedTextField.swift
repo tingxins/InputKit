@@ -11,9 +11,9 @@ import UIKit
 open class LimitedTextField: UITextField {
     
     //MARK: - Property defines
-    fileprivate var selectionRange: NSRange = NSMakeRange(0, 0)
+    private var selectionRange: NSRange = NSMakeRange(0, 0)
     
-    fileprivate var historyText: String?
+    private var historyText: String?
     
     open var limitedType: LimitedType = .normal
     @IBInspectable var _limitedType: Int {
@@ -75,7 +75,7 @@ open class LimitedTextField: UITextField {
         if self.delegate == nil { addDelegate() }
     }
     
-    fileprivate var limitedDelegate: LimitedTextFieldDelegate?
+    private var limitedDelegate: LimitedTextFieldDelegate?
     override open var delegate: UITextFieldDelegate? {
         get {
             return limitedDelegate
@@ -98,22 +98,22 @@ open class LimitedTextField: UITextField {
 
 extension LimitedTextField {
     //MARK: - Config Methods
-    fileprivate func addNotifications() {
+    private func addNotifications() {
         print(#function, Notification.Name.UITextFieldTextDidChange)
         
         NotificationCenter.default.addObserver(self, selector: #selector(textFieldTextDidChange(notification:)), name: Notification.Name.UITextFieldTextDidChange, object: nil)
         //        self.addTarget(self, action: #selector(textFieldTextDidChange(textField:)), for: .editingChanged)
     }
     
-    fileprivate func addDelegate() {
+    private func addDelegate() {
         delegate = nil;
     }
     
-    fileprivate func addConfigs() {
+    private func addConfigs() {
         autocorrectionType = .no;
     }
     
-    fileprivate func clearCache() {
+    private func clearCache() {
         historyText = nil;
     }
 }
@@ -128,7 +128,7 @@ extension LimitedTextField {
 //    }
     
     //MARK: - Notifications
-    @objc fileprivate func textFieldTextDidChange(notification: Notification) {
+    @objc private func textFieldTextDidChange(notification: Notification) {
         let textField = notification.object as? UITextField
         if self != textField { return }
         
