@@ -11,7 +11,9 @@
 
 </p>
 
-**InputKit** is an Elegant Kit to limits your input text, inspired by [BlocksKit](https://github.com/zwaldowski/BlocksKit), written in both Objective-C & Swift.（[中文版](http://www.jianshu.com/p/c592c2dc9733)）
+**InputKit** is an Elegant Kit to limits your input text, inspired by [BlocksKit](https://github.com/zwaldowski/BlocksKit), written in both Objective-C & Swift.
+
+> [中文介绍](http://www.jianshu.com/p/c592c2dc9733)
 
 # Language 
 
