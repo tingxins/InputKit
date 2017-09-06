@@ -103,7 +103,6 @@
     if (self != notification.object) return;
 
     UITextField *textField = notification.object;
-    
     NSString *currentText = textField.text;
     NSInteger maxLength = self.limitedNumber;
     //获取高亮部分
@@ -149,6 +148,9 @@
             NSString *limitedText = [currentText substringWithRange:_selectionRange];
             textField.text = [textField.text stringByReplacingOccurrencesOfString:limitedText withString:@""];
             _selectionRange = NSMakeRange(0, 0);
+            if (limitedText.length) {
+                flag = YES;
+            }
         }
         if (flag)
             [self sendIllegalMsgToObject];
@@ -161,6 +163,10 @@
     NSInteger location = [self offsetFromPosition:self.beginningOfDocument toPosition:textRange.start];
     NSInteger length = [self offsetFromPosition:textRange.start toPosition:textRange.end];
     return NSMakeRange(location, length);
+}
+
+- (void)resetSelectionTextRange{
+    _selectionRange = NSMakeRange(0, 0);
 }
 
 - (void)sendIllegalMsgToObject {
@@ -238,6 +244,8 @@
     BOOL matchResult = YES;
     if ([textField isKindOfClass:[TXLimitedTextField class]]) {
         TXLimitedTextField *limitedTextField = (TXLimitedTextField *)textField;
+        // 重置 Mark Range. (即 候选文本)
+        [limitedTextField resetSelectionTextRange];
         
         NSString *matchStr = [TXMatchManager getMatchContentWithOriginalText:textField.text replaceText:string range:range];
         

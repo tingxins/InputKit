@@ -149,6 +149,10 @@
             NSString *limitedText = [currentText substringWithRange:_selectionRange];
             textView.text = [textView.text stringByReplacingOccurrencesOfString:limitedText withString:@""];
             _selectionRange = NSMakeRange(0, 0);
+            
+            if (limitedText.length) {
+                flag = YES;
+            }
         }
         if (flag)
             [self sendIllegalMsgToObject];
@@ -161,6 +165,10 @@
     NSInteger location = [self offsetFromPosition:self.beginningOfDocument toPosition:textRange.start];
     NSInteger length = [self offsetFromPosition:textRange.start toPosition:textRange.end];
     return NSMakeRange(location, length);
+}
+
+- (void)resetSelectionTextRange{
+    _selectionRange = NSMakeRange(0, 0);
 }
 
 - (void)sendIllegalMsgToObject {
@@ -189,7 +197,8 @@
     
     if ([textView isKindOfClass:[TXLimitedTextView class]]) {
         TXLimitedTextView *limitedTextView = (TXLimitedTextView *)textView;
-        
+        // 重置 Mark Range. (即 候选文本)
+        [limitedTextView resetSelectionTextRange];
         id realDelegate = self.realDelegate;
         if (realDelegate &&
             [realDelegate respondsToSelector:@selector(textView:shouldChangeTextInRange:replacementText:)] &&
