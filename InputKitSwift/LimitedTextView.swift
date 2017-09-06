@@ -166,6 +166,10 @@ extension LimitedTextView {
                 let limitedText = text.substring(with: self.selectionRange)
                 textView?.text = (textView?.text as NSString!).replacingOccurrences(of: limitedText, with: "")
                 self.selectionRange = NSMakeRange(0, 0)
+                
+                if limitedText.characters.count > 0 {
+                    flag = true
+                }
             }
             
             if flag {
@@ -193,6 +197,10 @@ extension LimitedTextView {
                 return
         }
         delegate.sendMsgTo(obj: realDelegate, with: self, sel: InputKitMessage.Name.inputKitDidLimitedIllegalInputText)
+    }
+    
+    fileprivate func resetSelectionTextRange() {
+        selectionRange = NSMakeRange(0, 0)
     }
 }
 
@@ -241,7 +249,9 @@ fileprivate class LimitedTextViewDelegate: LimitedDelegate, UITextViewDelegate  
         var matchResult = true
         if textView.isKind(of: LimitedTextView.self) {
             let limitedTextView = textView as! LimitedTextView
-            
+            // 重置 Mark Range. (即 候选文本)
+            limitedTextView.resetSelectionTextRange()
+
             let matchStr = MatchManager.getMatchContentWithOriginalText(originalText: textView.text!, replaceText: text, range: range)
             
             let isDeleteOperation = (range.length > 0 && text.characters.count == 0) ? true : false;
