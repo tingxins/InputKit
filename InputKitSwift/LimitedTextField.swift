@@ -176,6 +176,10 @@ extension LimitedTextField {
                 let limitedText = text.substring(with: self.selectionRange)
                 textField?.text = (textField?.text as NSString!).replacingOccurrences(of: limitedText, with: "")
                 self.selectionRange = NSMakeRange(0, 0)
+                
+                if limitedText.count > 0 {
+                    flag = true
+                }
             }
             
             if flag {
@@ -203,6 +207,10 @@ extension LimitedTextField {
             return
         }
         delegate.sendMsgTo(obj: realDelegate, with: self, sel: InputKitMessage.Name.inputKitDidLimitedIllegalInputText)
+    }
+    
+    fileprivate func resetSelectionTextRange() {
+        selectionRange = NSMakeRange(0, 0)
     }
 }
 
@@ -261,7 +269,8 @@ fileprivate class LimitedTextFieldDelegate: LimitedDelegate, UITextFieldDelegate
         var matchResult = true
         if textField.isKind(of: LimitedTextField.self) {
             let limitedTextField = textField as! LimitedTextField
-            
+            // 重置 Mark Range. (即 候选文本)
+            limitedTextField.resetSelectionTextRange()
             let matchStr = MatchManager.getMatchContentWithOriginalText(originalText: textField.text!, replaceText: string, range: range)
             
             let isDeleteOperation = (range.length > 0 && string.characters.count == 0) ? true : false;
