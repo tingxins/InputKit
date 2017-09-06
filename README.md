@@ -29,7 +29,7 @@
 
 <p align="left">
     <a href="https://github.com/apple/swift"><img src="https://img.shields.io/badge/language-Swift 3.x-orange.svg"></a>
-    <a href="http://cocoadocs.org/docsets/InputKitSwift"><img src="https://img.shields.io/badge/pod-v1.1.7-green.svg?style=social"></a>
+    <a href="http://cocoadocs.org/docsets/InputKitSwift"><img src="https://img.shields.io/badge/pod-v1.1.10-green.svg?style=social"></a>
 </p>
 
 
