@@ -129,7 +129,10 @@
     if (!position) {
         BOOL flag = NO;
         if (currentText.length > maxLength) {
-            textField.text = [currentText substringToIndex:maxLength];
+            // Use the rangeOfComposedCharacterSequenceAtIndex: method
+            // to make sure that Unicode characters, like emojis, don’t get torn apart.
+            NSRange range = [currentText rangeOfComposedCharacterSequenceAtIndex:maxLength];
+            textField.text = [currentText substringToIndex:range.location];
             flag = YES;
         }
         
