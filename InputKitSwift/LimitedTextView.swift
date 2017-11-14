@@ -251,7 +251,7 @@ fileprivate class LimitedTextViewDelegate: LimitedDelegate, UITextViewDelegate  
             limitedTextView.resetSelectionTextRange()
             let matchStr = MatchManager.getMatchContentWithOriginalText(originalText: textView.text!, replaceText: text, range: range)
             
-            let isDeleteOperation = (range.length > 0 && text.characters.count == 0) ? true : false;
+            let isDeleteOperation = (range.length > 0 && text.count == 0) ? true : false;
             
             switch limitedTextView.limitedType {
             case .normal: break

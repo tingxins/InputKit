@@ -44,12 +44,12 @@ internal extension MatchManager {
     class func getMatchContentWithOriginalText(originalText: String, replaceText: String, range: NSRange) -> String {
         var matchContent = String()
         // 1.原始内容判空
-        if originalText.characters.count > 0 {
+        if originalText.count > 0 {
             matchContent = originalText
         }
         // 2.新增内容越界处理
-        if replaceText.characters.count > 0 {
-            if range.location < matchContent.characters.count {
+        if replaceText.count > 0 {
+            if range.location < matchContent.count {
                 let index = matchContent.index(matchContent.startIndex, offsetBy: range.location)
                 matchContent.insert(contentsOf: replaceText, at: index)
             }else {

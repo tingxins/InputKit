@@ -273,7 +273,7 @@ fileprivate class LimitedTextFieldDelegate: LimitedDelegate, UITextFieldDelegate
             limitedTextField.resetSelectionTextRange()
             let matchStr = MatchManager.getMatchContentWithOriginalText(originalText: textField.text!, replaceText: string, range: range)
             
-            let isDeleteOperation = (range.length > 0 && string.characters.count == 0) ? true : false;
+            let isDeleteOperation = (range.length > 0 && string.count == 0) ? true : false;
             
             switch limitedTextField.limitedType {
             case .normal:
