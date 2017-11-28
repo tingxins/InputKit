@@ -75,7 +75,7 @@ open class LimitedTextField: UITextField {
         if self.delegate == nil { addDelegate() }
     }
     
-    private var limitedDelegate: LimitedTextFieldDelegate?
+    private weak var limitedDelegate: LimitedTextFieldDelegate?
     override open var delegate: UITextFieldDelegate? {
         get {
             return limitedDelegate

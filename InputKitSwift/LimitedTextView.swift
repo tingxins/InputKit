@@ -74,7 +74,7 @@ open class LimitedTextView: UITextView {
         if self.delegate == nil { addDelegate() }
     }
     
-    private var limitedDelegate: LimitedTextViewDelegate?
+    private weak var limitedDelegate: LimitedTextViewDelegate?
     override open var delegate: UITextViewDelegate? {
         get {
             return limitedDelegate
