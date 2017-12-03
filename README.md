@@ -23,13 +23,13 @@
 </p>
 
 <p align="left">
-    <a href="https://github.com/apple/swift"><img src="https://img.shields.io/badge/language-Swift%204.0%20beta-orange.svg"></a>
+    <a href="https://github.com/apple/swift"><img src="https://img.shields.io/badge/language-Swift%204.0%20-orange.svg"></a>
     <a href="http://cocoadocs.org/docsets/InputKitSwift"><img src="https://img.shields.io/cocoapods/v/InputKitSwift.svg?style=social"></a>
 </p>
 
 <p align="left">
     <a href="https://github.com/apple/swift"><img src="https://img.shields.io/badge/language-Swift 3.x-orange.svg"></a>
-    <a href="http://cocoadocs.org/docsets/InputKitSwift"><img src="https://img.shields.io/badge/pod-v1.1.10-green.svg?style=social"></a>
+    <a href="http://cocoadocs.org/docsets/InputKitSwift"><img src="https://img.shields.io/badge/pod-v1.1.14-green.svg?style=social"></a>
 </p>
 
 
