@@ -80,11 +80,7 @@ open class LimitedTextView: UITextView {
             return limitedDelegate
         }
         set {
-            if let value = newValue {
-                limitedDelegate = LimitedTextViewDelegate(realDelegate: value)
-            }else {
-                limitedDelegate = nil
-            }
+            limitedDelegate = LimitedTextViewDelegate(realDelegate: newValue)
             super.delegate = limitedDelegate
         }
     }
