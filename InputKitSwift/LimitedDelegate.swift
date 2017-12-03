@@ -10,7 +10,7 @@ import UIKit
 
 internal class LimitedDelegate: NSObject {
     
-    private(set) var realDelegate: AnyObject?
+    private(set) weak var realDelegate: AnyObject?
     
     init(realDelegate: AnyObject?) {
         self.realDelegate = realDelegate
