@@ -54,7 +54,6 @@ class ViewController: UIViewController, UITextFieldDelegate {
         let textField = LimitedTextField(frame: CGRect(x: 20, y: Int(Float(200) * yScale), width: 250, height: 40))
         view.addSubview(textField)
         textField.backgroundColor = .red
-        textField.delegate = self
         print(textField)
         return textField
     }
