@@ -47,10 +47,22 @@ There are three ways to use InputKit in your project:
     
 CocoaPods is a dependency manager for Objective-C, which automates and simplifies the process of using 3rd-party libraries in your projects. 
 
-**Podfile**
+### Podfile
 
     platform :ios, '8.0'
-    pod 'InputKit', 'xxx'
+
+#### Objective-C
+
+    pod 'InputKit', '~> 1.1.15'
+
+#### Swift 3.x
+
+    pod 'InputKitSwift', '~> 1.1.14'
+
+#### Swift 4.0
+
+    pod 'InputKitSwift', '~> 1.1.16'
+
 
 ## Manual
 
