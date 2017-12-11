@@ -54,6 +54,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
         let textField = LimitedTextField(frame: CGRect(x: 20, y: Int(Float(200) * yScale), width: 250, height: 40))
         view.addSubview(textField)
         textField.backgroundColor = .red
+        textField.delegate = self
         print(textField)
         return textField
     }
@@ -94,8 +95,12 @@ extension ViewController {
 
 // MARK: - 处理输入非法字符时的回调（callback）
 extension ViewController {
+    
     @objc func inputKitDidLimitedIllegalInputText(_ component: AnyObject) {
         print("处理输入非法字符时的回调")
+    }
+    @objc func inputKitDidChangeInputText(_ component: UITextField) {
+        print("inputKitDidChangeInputText:\(component.text ?? "null")")
     }
 }
 
