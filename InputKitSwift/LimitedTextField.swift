@@ -186,6 +186,7 @@ extension LimitedTextField {
             guard let markedTextRange = textField?.markedTextRange else { return }
             self.selectionRange = range(from: markedTextRange)
         }
+        sendDidChangeMsgToObject()
     }
 }
 
@@ -203,6 +204,14 @@ extension LimitedTextField {
             return
         }
         delegate.sendMsgTo(obj: realDelegate, with: self, sel: InputKitMessage.Name.inputKitDidLimitedIllegalInputText)
+    }
+    
+    fileprivate func sendDidChangeMsgToObject() {
+        guard let delegate = self.limitedDelegate
+            , let realDelegate = delegate.realDelegate else {
+                return
+        }
+        delegate.sendMsgTo(obj: realDelegate, with: self, sel: InputKitMessage.Name.inputKitDidChangeInputText)
     }
     
     fileprivate func resetSelectionTextRange() {
@@ -255,7 +264,7 @@ fileprivate class LimitedTextFieldDelegate: LimitedDelegate, UITextFieldDelegate
     
     @available(iOS 2.0, *)
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
-        print(self, #function)
+
         var flag = true
         
         if let realDelegate = self.realDelegate, realDelegate.responds(to: #selector(textField(_:shouldChangeCharactersIn:replacementString:))) {
@@ -263,8 +272,8 @@ fileprivate class LimitedTextFieldDelegate: LimitedDelegate, UITextFieldDelegate
         }
         
         var matchResult = true
+        let limitedTextField = textField as! LimitedTextField
         if textField.isKind(of: LimitedTextField.self) {
-            let limitedTextField = textField as! LimitedTextField
             // 重置 Mark Range. (即 候选文本)
             limitedTextField.resetSelectionTextRange()
             let matchStr = MatchManager.getMatchContentWithOriginalText(originalText: textField.text!, replaceText: string, range: range)
@@ -287,8 +296,10 @@ fileprivate class LimitedTextFieldDelegate: LimitedDelegate, UITextFieldDelegate
             if !result {
                 limitedTextField.sendIllegalMsgToObject();
             }
+            limitedTextField.sendDidChangeMsgToObject()
             return result
         }
+        limitedTextField.sendDidChangeMsgToObject()
         return matchResult && flag
     }// return NO to not change text
     

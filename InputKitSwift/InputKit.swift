@@ -11,6 +11,7 @@ import Foundation
 struct InputKitMessage {
     struct Name {
         static let inputKitDidLimitedIllegalInputText: Selector = Selector(("inputKitDidLimitedIllegalInputText:"))
+        static let inputKitDidChangeInputText: Selector = Selector(("inputKitDidChangeInputText:"))
     }
 }
 

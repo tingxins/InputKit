@@ -175,6 +175,7 @@ extension LimitedTextView {
             guard let markedTextRange = textView?.markedTextRange else { return }
             self.selectionRange = range(from: markedTextRange)
         }
+        sendDidChangeMsgToObject()
     }
 }
 
@@ -192,6 +193,14 @@ extension LimitedTextView {
                 return
         }
         delegate.sendMsgTo(obj: realDelegate, with: self, sel: InputKitMessage.Name.inputKitDidLimitedIllegalInputText)
+    }
+    
+    fileprivate func sendDidChangeMsgToObject() {
+        guard let delegate = self.limitedDelegate
+            , let realDelegate = delegate.realDelegate else {
+                return
+        }
+        delegate.sendMsgTo(obj: realDelegate, with: self, sel: InputKitMessage.Name.inputKitDidChangeInputText)
     }
     
     fileprivate func resetSelectionTextRange() {
@@ -235,15 +244,15 @@ fileprivate class LimitedTextViewDelegate: LimitedDelegate, UITextViewDelegate  
     
     @available(iOS 2.0, *)
     func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
-        print(self, #function)
+
         var flag = true
         if let realDelegate = self.realDelegate, realDelegate.responds(to: #selector(textView(_:shouldChangeTextIn:replacementText:))) {
             flag = realDelegate.textView(textView, shouldChangeTextIn: range, replacementText: text)
         }
         
         var matchResult = true
+        let limitedTextView = textView as! LimitedTextView
         if textView.isKind(of: LimitedTextView.self) {
-            let limitedTextView = textView as! LimitedTextView
             limitedTextView.resetSelectionTextRange()
             let matchStr = MatchManager.getMatchContentWithOriginalText(originalText: textView.text!, replaceText: text, range: range)
             
@@ -263,8 +272,10 @@ fileprivate class LimitedTextViewDelegate: LimitedDelegate, UITextViewDelegate  
             if !result {
                 limitedTextView.sendIllegalMsgToObject();
             }
+            limitedTextView.sendDidChangeMsgToObject()
             return result
         }
+        limitedTextView.sendDidChangeMsgToObject()
         return matchResult && flag
     }
     
