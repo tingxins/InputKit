@@ -316,8 +316,8 @@ fileprivate class LimitedTextFieldDelegate: LimitedDelegate, UITextFieldDelegate
     @available(iOS 2.0, *)
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         var flag = true
-        if let realDelegate = self.realDelegate, realDelegate.responds(to: #selector(textFieldShouldClear(_:))) {
-            flag = realDelegate.textFieldShouldClear(textField)
+        if let realDelegate = self.realDelegate, realDelegate.responds(to: #selector(textFieldShouldReturn(_:))) {
+          flag = realDelegate.textFieldShouldReturn(textField)
         }
         return flag
     }// called when 'return' key pressed. return NO to ignore.
