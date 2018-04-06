@@ -159,7 +159,7 @@ extension LimitedTextView {
             let text: NSString = currentText! as NSString
             if ((self.selectionRange.length > 0) && !isMatch && (self.selectionRange.length + self.selectionRange.location <= text.length)) {
                 let limitedText = text.substring(with: self.selectionRange)
-                textView?.text = (textView?.text as NSString!).replacingOccurrences(of: limitedText, with: "")
+                textView?.text = textView?.text.replacingOccurrences(of: limitedText, with: "")
                 self.selectionRange = NSMakeRange(0, 0)
                 
                 if limitedText.count > 0 {

@@ -170,7 +170,7 @@ extension LimitedTextField {
             let text: NSString = currentText! as NSString
             if ((self.selectionRange.length > 0) && !isMatch && (self.selectionRange.length + self.selectionRange.location <= text.length)) {
                 let limitedText = text.substring(with: self.selectionRange)
-                textField?.text = (textField?.text as NSString!).replacingOccurrences(of: limitedText, with: "")
+                textField?.text = textField?.text?.replacingOccurrences(of: limitedText, with: "")
                 self.selectionRange = NSMakeRange(0, 0)
                 
                 if limitedText.count > 0 {
