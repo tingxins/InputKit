@@ -24,3 +24,6 @@ public struct MatchConstant {
     }
 }
 
+public enum MatchVariables {
+  public static var kLimitedTextNumberFloatSeparators = "."
+}
