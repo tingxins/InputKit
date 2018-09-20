@@ -95,11 +95,11 @@ open class LimitedTextField: UITextField {
 extension LimitedTextField {
   //MARK: - Config Methods
   private func addNotifications() {
-    print(#function, Notification.Name.UITextFieldTextDidChange)
+    print(#function, UITextField.textDidChangeNotification)
     
     NotificationCenter.default.addObserver(self,
                                            selector: #selector(textFieldTextDidChange(notification:)),
-                                           name: Notification.Name.UITextFieldTextDidChange,
+                                           name: UITextField.textDidChangeNotification,
                                            object: nil)
   }
   
@@ -246,7 +246,7 @@ fileprivate class LimitedTextFieldDelegate: LimitedDelegate, UITextFieldDelegate
   } // may be called if forced even if shouldEndEditing returns NO (e.g. view removed from window) or endEditing:YES called
   
   @available(iOS 10.0, *)
-  func textFieldDidEndEditing(_ textField: UITextField, reason: UITextFieldDidEndEditingReason) {
+  func textFieldDidEndEditing(_ textField: UITextField, reason: UITextField.DidEndEditingReason) {
     (self.realDelegate as? UITextFieldDelegate)?.textFieldDidEndEditing?(textField, reason: reason)
   } // try call textFieldDidEndEditing:
   
