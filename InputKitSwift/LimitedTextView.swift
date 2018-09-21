@@ -96,7 +96,7 @@ extension LimitedTextView {
   private func addNotifications() {
     NotificationCenter.default.addObserver(self,
                                            selector: #selector(textViewTextDidChange(notification:)),
-                                           name: Notification.Name.UITextViewTextDidChange,
+                                           name: UITextView.textDidChangeNotification,
                                            object: nil)
   }
   
