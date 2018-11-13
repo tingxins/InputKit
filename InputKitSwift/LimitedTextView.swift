@@ -77,11 +77,12 @@ open class LimitedTextView: UITextView {
   private var limitedDelegate: LimitedTextViewDelegate?
   override open var delegate: UITextViewDelegate? {
     get {
-      return limitedDelegate
+      return super.delegate
     }
     set {
-      limitedDelegate = LimitedTextViewDelegate(realDelegate: newValue)
+      let limitedDelegate = LimitedTextViewDelegate(realDelegate: newValue)
       super.delegate = limitedDelegate
+        self.limitedDelegate = limitedDelegate
     }
   }
   
